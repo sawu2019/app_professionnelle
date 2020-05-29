@@ -62,8 +62,17 @@
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
                               <i class="fa fa-eye" ></i>
                               </a>               
-        
-                              </form> 
+                              <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
+                              <i class="fa fa-pencil" ></i>
+                              </a>
+                            
+                              <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">
+                              <i class="fa fa-trash" ></i>
+                              </button>
+                              </form>
                           </td>
                         </tr>
                     @endforeach

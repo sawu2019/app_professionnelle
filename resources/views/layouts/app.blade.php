@@ -23,6 +23,10 @@
     <link href="{{asset('vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="{{asset('vendors/pnotify/dist/pnotify.css ')}}" rel="stylesheet">
+    <link href="{{asset('vendors/pnotify/dist/pnotify.buttons.css ')}}" rel="stylesheet">
+    <link href="{{asset('vendors/pnotify/dist/pnotify.nonblock.css ')}}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
@@ -258,7 +262,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="dashboard_graph">
-                    
+                @if ( session()->has('message') )
+                  <div class="alert alert-success alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <strong>{{ session()->get('message') }}</strong> 
+                  </div>  
+                @endif
                   @yield('content')
                     
                   
@@ -307,6 +317,10 @@
     <script src="{{asset('vendors/jszip/dist/jszip.min.js')}}"></script>
     <script src="{{asset('vendors/pdfmake/build/pdfmake.min.js')}}"></script>
     <script src="{{asset('vendors/pdfmake/build/vfs_fonts.js')}}"></script>
+    <!-- PNotify -->
+    <script src="{{asset('vendors/pnotify/dist/pnotify.js ')}}"></script>
+    <script src="{{asset('vendors/pnotify/dist/pnotify.buttons.js ')}}"></script>
+    <script src="{{asset('vendors/pnotify/dist/pnotify.nonblock.js ')}}"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('build/js/custom.min.js')}}"></script>

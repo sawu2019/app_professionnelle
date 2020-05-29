@@ -178,7 +178,7 @@ class OperatController extends Controller
             $operat->denomination = $request->get('denomination');
             $operat->sigle = $request->get('sigle');
             $operat->description = $request->get('description');
-            $operat->description = $request->get('adresse');
+            $operat->adresse = $request->get('adresse');
             $operat->nature = $request->get('nature');
             $operat->raison_sociale = $request->get('raison_sociale');
             $operat->regime_fiscal = $request->get('regime_fiscal');
@@ -208,7 +208,7 @@ class OperatController extends Controller
             $operat->statut = $request->get('statut');
             $operat->save();
 
-            return redirect('/operats')->with('Reussi', 'Modification Effectuer!');
+            return redirect('/operats')->with('message', 'Modification Effectuer avec succès!');
 
     }
 
