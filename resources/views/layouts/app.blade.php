@@ -43,7 +43,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -55,21 +55,21 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-dashboard"></i> Accueil <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
-                    </ul>
+                  <li><a a href="#"><i class="fa fa-dashboard"></i> Accueil </a>
                   </li>
                   <li><a><i class="fa fa-home"></i> Opérateurs Miniers <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ route('operats.index') }}">Tous</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                  <ul class="nav child_menu">
+                        <li><a href="{{ route('operats.index') }}">Tous</a>
+                        <li><a>Secteurs<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Artisanal</a>
+                            </li>
+                            <li><a href="#level2_1">Industriel</a>
+                            </li>
+                            <li><a href="#level2_2">Service</a>
+                            </li>
+                          </ul>
+                        </li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-slack"></i> Partenariats <span class="fa fa-chevron-down"></span></a>
