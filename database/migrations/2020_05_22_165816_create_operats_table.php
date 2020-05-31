@@ -14,7 +14,8 @@ class CreateOperatsTable extends Migration
     public function up()
     {
         Schema::create('operats', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedInteger('province_id');
             $table->string('denomination');
             $table->string('sigle');
             $table->string('description');

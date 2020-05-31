@@ -41,8 +41,8 @@
                           <th></th>
                         </tr>
                       </thead>
-                      <tbody >
-                    @foreach($operats as $operat)
+                      <tbody>
+                    @foreach($data as $operat)
                         <tr>
                           <td>{{ $operat->sigle}}</td>
                           <td>{{ $operat->adresse}}</td>

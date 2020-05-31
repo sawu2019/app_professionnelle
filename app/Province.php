@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Operat extends Model
+class Province extends Model
 {
     protected $guarded = [];
 
-    public function province()
+    public function operats()
     {
-        return $this->belongsTo('App\Province');
+        return $this->hasMany('App\Operat');
     }
 }

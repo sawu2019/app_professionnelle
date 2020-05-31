@@ -36,7 +36,7 @@
                         </div>
                         <div class="block_content">
                           <h2 class="title">
-                                          <a>DENOMINATION</a>
+                                          <a><h2>DENOMINATION</h2></a>
                                       </h2>
                         
                           <p class="excerpt">{{$operat->denomination}}

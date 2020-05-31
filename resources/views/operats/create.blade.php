@@ -4,7 +4,7 @@
 @section('content')
 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Form Design <small>different form elements</small></h2>
+                    <h2>Identification d'un opérateur  </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -66,6 +66,23 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="adresse" name="adresse" required="required" class="form-control has-feedback-left">
                           <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Province">Province <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control has-feedback-left @error('province_id') is-invalid @enderror"  name="province_id">
+                            @foreach( $provinces as $province )
+                            <option value="{{ $province->id }}" >{{ $province->nom }}</option>
+                            @endforeach
+                          </select>
+                          @error('province_id')
+                          <div class="invalid-feedback">
+                            {{ $errors->first('province_id') }}
+                          </div>
+                          @enderror
+                          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
                       <div class="form-group">

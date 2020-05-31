@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Operat;
 use Illuminate\Http\Request;
+use App\Province;
 
 class OperatController extends Controller
 {
@@ -26,7 +27,8 @@ class OperatController extends Controller
     public function create()
     {
         $this->authorize('create',Operat::class);
-        return view('operats.create');
+        $provinces = Province::all();
+        return view('operats.create', compact('operats', 'provinces'));
     }
 
     /**

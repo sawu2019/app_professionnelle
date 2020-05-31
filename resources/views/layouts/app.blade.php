@@ -66,7 +66,7 @@
                         <li><a href="{{ route('operats.index') }}">Tous</a>
                         <li><a>Secteurs<span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Artisanal</a>
+                            <li class="sub_menu"><a href="#">Artisanal</a>
                             </li>
                             <li><a href="#level2_1">Industriel</a>
                             </li>
