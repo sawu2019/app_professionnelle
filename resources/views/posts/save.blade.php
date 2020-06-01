@@ -645,3 +645,8 @@
     <!-- /Datatables -->
   </body>
 </html>
+
+// POLICIES CREATE
+return in_array($user->email, [
+            'admin@gmail.com',
+        ]);

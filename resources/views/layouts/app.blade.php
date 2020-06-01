@@ -64,102 +64,56 @@
                   <li><a><i class="fa fa-home"></i> Opérateurs Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                         <li><a href="{{ route('operats.index') }}">Tous</a>
-                        <li><a>Secteurs<span class="fa fa-chevron-down"></span></a>
+                        <li><a> Secteurs <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="#">Artisanal</a>
+                            <li class="sub_menu"><a href="#"> Artisanal </a>
                             </li>
-                            <li><a href="#level2_1">Industriel</a>
+                            <li><a href="#"> Industriel </a>
                             </li>
-                            <li><a href="#level2_2">Service</a>
+                            <li><a href="#"> Service </a>
                             </li>
                           </ul>
                         </li>
                     </ul>
                   </li>
+
                   <li><a><i class="fa fa-slack"></i> Partenariats <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="general_elements.html">General Elements</a></li>
-                      <li><a href="media_gallery.html">Media Gallery</a></li>
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="glyphicons.html">Glyphicons</a></li>
-                      <li><a href="widgets.html">Widgets</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
+                  <ul class="nav child_menu">
+                        <li><a href="#">Tous</a></li>
+                        <li><a> Investisseurs <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="#"> Public </a>
+                            </li>
+                            <li><a href="#"> Privée </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#"> Actionnaires </a>
+                        </li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-file-text"></i> Projets Miniers <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                  <li><a href="#"><i class="fa fa-file-text"></i> Projets Miniers <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                        <li><a href="#"> Tous </a></li>
+                        <li><a href="#"> Grande echelles</a>
+                        </li>
+                        <li><a href="#"> Petits echelles </a>
+                        </li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-file-text"></i> Contrats Miniers <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
+                  <li><a href="#"><i class="fa fa-file-text"></i> Contrats Miniers</a>
                   </li>
-                  <li><a><i class="fa fa-file-text"></i> Titres Miniers <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
+                  <li><a href="#"><i class="fa fa-file-text"></i> Conventions Miniers</a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-file-text"></i> Titres Miniers </a>
                   </li>
                   <li><a><i class="fa fa-file-pdf-o"></i>Arrêtés <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                      <li><a href="#">Ministériel</a></li>
+                      <li><a href="#">InterMinistériel</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>ZEA <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Besoins Opérateurs <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-pie-chart"></i>Statistiques <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-inbox"></i>Aide Publiques <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-paste"></i>Contribution <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-exchange"></i>Revenus Secteur Miniers <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-toggle-off"></i>Obligation Opérateurs <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
+                  <li><a href="#"><i class="fa fa-clone"></i> ZEA </a>
                   </li>
                 </ul>
               </div>

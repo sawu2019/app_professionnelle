@@ -5,9 +5,23 @@ namespace App\Http\Controllers;
 use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;
+use Illuminate\Support\Facades\Gate;
 
 class OperatController extends Controller
 {
+    /* Make sure you don't user Gate and Policy altogether for the same Model/Resource */
+  public function gate()
+  {
+    $operats = Operat::find(1);
+ 
+    if (Gate::allows('update-operats', $operats)) {
+      echo 'Allowed';
+    } else {
+      echo 'Not Allowed';
+    }
+     
+    exit;
+  }
     /**
      * Display a listing of the resource.
      *
@@ -39,39 +53,6 @@ class OperatController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'denomination'=>'required',
-            'sigle'=>'required',
-            'description'=>'required',
-            'adresse'=>'required',
-            'nature'=>'required',
-            'raison_sociale'=>'required',
-            'regime_fiscal'=>'required',
-            'annee_creation'=>'required',
-            'annee_fermeture'=>'required',
-            'nbre_surccursale'=>'required',
-            'code_unique'=>'required',
-            'rccm'=>'required',
-            'id_nat'=>'required',
-            'num_ident_fiscal'=>'required',
-            'num_import_export'=>'required',
-            'num_aff_cnss'=>'required',
-            'num_aff_inpp'=>'required',
-            'num_compte_bancaire_interne'=>'required',
-            'num_compte_bancaire_etranger'=>'required',
-            'capital_social'=>'required',
-            'num_tva'=>'required',
-            'num_dgda'=>'required',
-            'num_dgi'=>'required',
-            'num_dgrad'=>'required',
-            'num_occ'=>'required',
-            'boite_postal'=>'required',
-            'num_fax'=>'required',
-            'num_telephone'=>'required',
-            'mail'=>'required',
-            'site_web'=>'required',
-            'statut'=>'required'
-        ]);
         $operat = new Operat([
             'denomination' => $request->get('denomination'),
             'sigle' => $request->get('sigle'),
@@ -103,7 +84,8 @@ class OperatController extends Controller
             'num_telephone' => $request->get('num_telephone'),
             'mail' => $request->get('mail'),
             'site_web' => $request->get('site_web'),
-            'statut' => $request->get('statut')
+            'statut' => $request->get('statut'),
+            'province_id' => $request->get('province_id')
 
         ]);
         $operat->save();
@@ -118,6 +100,7 @@ class OperatController extends Controller
      */
     public function show($id)
     {
+        $this->authorize('create',Operat::class);
         $operat = Operat::find($id);
         return view('operats.show', compact('operat'));
     }
@@ -130,6 +113,7 @@ class OperatController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('create',Operat::class);
         $operat = Operat::find($id);
         return view('operats.edit', compact('operat'));
     }

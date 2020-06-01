@@ -30,7 +30,7 @@ class OperatPolicy
      */
     public function view(User $user, Operat $operat)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,9 +41,8 @@ class OperatPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->email, [
-            'admin@gmail.com',
-        ]);
+        return $user->id > 0;
+        
     }
 
     /**
@@ -55,7 +54,7 @@ class OperatPolicy
      */
     public function update(User $user, Operat $operat)
     {
-        //
+        return $user->id == $operat->user_id;
     }
 
     /**
@@ -67,9 +66,7 @@ class OperatPolicy
      */
     public function delete(User $user, Operat $operat)
     {
-        return in_array($user->email, [
-            'admin@gmail.com',
-        ]);
+        return $user->id == $operat->user_id;
     }
 
     /**
