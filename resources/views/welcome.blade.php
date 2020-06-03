@@ -4,11 +4,13 @@
 @section('content')
             <div class="row top_tiles">
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+             
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">1261</div>
+                  <div class="count">144</div>
                   <h3>Opérateurs Miniers</h3>
                 </div>
+                
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">

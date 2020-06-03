@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OperatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,12 @@ Route::get('/', function () {
 
 Route::resource('posts', 'PostController');
 Route::resource('operats', 'OperatController');
+//route pour le secteur artisanal
+Route::get('artisanals', 'OperatController@artisana');
+//route pour le secteur industriel
+Route::get('industriel', 'OperatController@industrie');
+//route pour le secteur service
+Route::get('service', 'OperatController@servi');
 
 Auth::routes();
 

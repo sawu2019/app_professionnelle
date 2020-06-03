@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;
+use App\Secteur;
 use Illuminate\Support\Facades\Gate;
 
 class OperatController extends Controller
@@ -29,9 +30,31 @@ class OperatController extends Controller
      */
     public function index()
     {
-        $operats = Operat::all();
+        $operats = Operat::with('province')->get();
         return view('operats.index', compact('operats'));
     }
+    
+    // function pour le secteur artisanal
+    public function artisana()
+    {
+        $operats = Operat::where('secteur_id','2')->get();
+        return view('operats.artisanals', compact('operats'));
+    }
+
+    // function pour le secteur artisanal
+    public function industrie()
+    {
+        $operats = Operat::where('secteur_id','1')->get();
+        return view('operats.industriel', compact('operats'));
+    }
+
+     // function pour le secteur artisanal
+     public function servi()
+     {
+         $operats = Operat::where('secteur_id','3')->get();
+         return view('operats.service', compact('operats'));
+     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +65,8 @@ class OperatController extends Controller
     {
         $this->authorize('create',Operat::class);
         $provinces = Province::all();
-        return view('operats.create', compact('operats', 'provinces'));
+        $secteurs = Secteur::all();
+        return view('operats.create', compact('operats', 'provinces','secteurs'));
     }
 
     /**
@@ -85,8 +109,9 @@ class OperatController extends Controller
             'mail' => $request->get('mail'),
             'site_web' => $request->get('site_web'),
             'statut' => $request->get('statut'),
-            'province_id' => $request->get('province_id')
-
+            'province_id' => $request->get('province_id'),
+            'secteur_id' => $request->get('secteur_id')
+            
         ]);
         $operat->save();
         return redirect('/operats')->with('Succes','Information saved !');

@@ -237,7 +237,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          Plate-forme de Gestion des Opérateurs Miniers Oeuvrant en République Démocratique du Congo <a href="https://colorlib.com"> CTCPM | Ministère des Mines</a>
           </div>
           <div class="clearfix"></div>
         </footer>

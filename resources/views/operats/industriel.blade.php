@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo</small>
+                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo au secteur d'industriel</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -38,29 +38,27 @@
                           <th scope="col">NATURE</th>
                           <th scope="col">DATE DE CREATION</th>
                           <th scope="col">SITE WEB</th>
-                          <th scope="col">DETAILS</th>
+                          <th></th>
                         </tr>
                       </thead>
-                      <tbody >
+                      <tbody>
                     @foreach($operats as $operat)
                         <tr>
                           <td>{{ $operat->sigle}}</td>
                           <td>{{ $operat->adresse}}</td>
                           <td>{{ $operat->nature}}</td>
-                          @if($operat->province)
-                          <td>{{ $operat->province->nom}}</td>
+                          @if($operat->secteur)
+                          <td>{{ $operat->secteur->nom}}</td>
                           @endif
                           <td>{{ $operat->site_web}}</td>
                           <td class="table-buttons">
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
                               <i class="fa fa-eye" ></i>
-                              </a> 
-                              @can('create', 'App\Operat')              
+                              </a>               
                               <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
                               <i class="fa fa-pencil" ></i>
                               </a>
-                              @endcan
-                              @can('create', 'App\Operat')
+                            
                               <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
                               @csrf
                               @method('DELETE')
@@ -68,7 +66,6 @@
                               <i class="fa fa-trash" ></i>
                               </button>
                               </form>
-                              @endcan
                           </td>
                         </tr>
                     @endforeach

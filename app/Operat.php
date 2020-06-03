@@ -12,4 +12,9 @@ class Operat extends Model
     {
         return $this->belongsTo('App\Province');
     }
+
+    public function secteur()
+    {
+        return $this->belongsTo('App\Secteur');
+    }
 }

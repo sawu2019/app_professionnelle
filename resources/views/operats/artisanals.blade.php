@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo</small>
+                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo au secteur d'artisanals</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -42,12 +42,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                    @foreach($data as $operat)
+                    @foreach($operats as $operat)
                         <tr>
                           <td>{{ $operat->sigle}}</td>
                           <td>{{ $operat->adresse}}</td>
                           <td>{{ $operat->nature}}</td>
-                          <td>{{ $operat->annee_creation}}</td>
+                          @if($operat->secteur)
+                          <td>{{ $operat->secteur->nom}}</td>
+                          @endif
                           <td>{{ $operat->site_web}}</td>
                           <td class="table-buttons">
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
