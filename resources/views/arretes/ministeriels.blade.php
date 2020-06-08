@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo au secteur d'industriel</small>
+                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,8 +24,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Operat')
-                  <a href="{{ route('operats.create') }}" class="btn btn-success">
+                  @can('create', 'App\Arrete')
+                  <a href="{{ route('arretes.create') }}" class="btn btn-success">
                   Créer
                   </a>
                   @endcan
@@ -33,35 +33,33 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered mt-3">
                       <thead>
                         <tr>
-                          <th scope="col">NOM</th>
-                          <th scope="col">ADRESSE</th>
-                          <th scope="col">NATURE</th>
-                          <th scope="col">DATE DE CREATION</th>
-                          <th scope="col">SITE WEB</th>
-                          <th></th>
+                          <th scope="col">TITRE</th>
+                          <th scope="col">TYPE D'ARRETES</th>
+                          <th scope="col">DOCUMENTS</th>
+                          <th scope="col">ANNEES DE PUBLICATION</th>
+                          <th scope="col">DETAILS</th>
                         </tr>
                       </thead>
-                      <tbody>
-                    @foreach($operats as $operat)
+                      <tbody >
+                      @foreach($arretes as $arrete)
                         <tr>
-                          <td>{{ $operat->sigle}}</td>
-                          <td>{{ $operat->adresse}}</td>
-                          <td>{{ $operat->nature}}</td>
-                          @if($operat->secteur)
-                          <td>{{ $operat->secteur->nom}}</td>
+                          <td>{{ $arrete->titre}}</td>
+                          @if($arrete->typearrete)
+                          <td>{{ $arrete->typearrete->nom}}</td>
                           @endif
-                          <td>{{ $operat->site_web}}</td>
+                          <td> Fichier <a href="{{ asset('storage') . '/' .$arrete->fichier }}" target="_blank"> <i class="fa fa-file-pdf-o" ></i> </a></td>
+                          <td>{{ $arrete->annees}}</td>
                           <td class="table-buttons">
-                              <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
+                              <a href="{{ route('arretes.show', $arrete )}}" class="btn btn-success">
                               <i class="fa fa-eye" ></i>
                               </a> 
-                              @can('create', 'App\Operat')              
-                              <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Arrete')              
+                              <a href="{{ route('arretes.edit', $arrete->id)}}" class="btn btn-primary"> 
                               <i class="fa fa-pencil" ></i>
                               </a>
                               @endcan
-                              @can('create', 'App\Operat')
-                              <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
+                              @can('create', 'App\Arrete')
+                              <form  action="{{ route('arretes.destroy', $arrete->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">
@@ -71,7 +69,7 @@
                               @endcan
                           </td>
                         </tr>
-                    @endforeach
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

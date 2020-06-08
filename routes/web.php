@@ -19,14 +19,26 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', 'PostController');
+//route pour le crud opérateurs
 Route::resource('operats', 'OperatController');
+//route pour le crud arretes
+Route::resource('arretes', 'ArreteController');
 //route pour le secteur artisanal
-Route::get('artisanals', 'OperatController@artisana');
+Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
 //route pour le secteur industriel
-Route::get('industriel', 'OperatController@industrie');
+Route::get('/industriel', 'OperatController@industrie')->name('operats.industriel');
 //route pour le secteur service
-Route::get('service', 'OperatController@servi');
+Route::get('/service', 'OperatController@servi')->name('operats.service');
+//route pour l'arrete interministeriels
+Route::get('/interministeriels', 'ArreteController@interminister')->name('arretes.interministeriels');
+//route pour l'arrete ministeriels
+Route::get('/ministeriels', 'ArreteController@minister')->name('arretes.ministeriels');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// route pour generer un fichier pdf
+Route::get('/getPDF', 'PDFController@getPDF');
+// route pour generer un fichier excel
+Route::get('/showdata', 'CvsController@showdata');
+Route::get('/export', 'CvsController@export');

@@ -7,7 +7,7 @@
              
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">144</div>
+                  <div class="count">14</div>
                   <h3>Opérateurs Miniers</h3>
                 </div>
                 

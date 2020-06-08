@@ -40,7 +40,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="denomination">Denomination <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="denomination" name="denomination" value="{{ old('denomination')}}" required="required" class="form-control has-feedback-left">
+                          <input type="text" id="denomination" name="denomination"  required="required" class="form-control has-feedback-left">
                           <span class="fa fa-edit form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
@@ -48,7 +48,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="sigle">Sigle <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="sigle" name="sigle" required="required" value="{{ old('sigle')}}"  class="form-control has-feedback-left">
+                          <input type="text" id="sigle" name="sigle" required="required"  class="form-control has-feedback-left">
                           <span class="fa fa-sort-alpha-asc form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>

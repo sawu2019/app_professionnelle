@@ -66,11 +66,11 @@
                         <li><a href="{{ route('operats.index') }}">Tous</a>
                         <li><a> Secteurs <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="#"> Artisanal </a>
+                            <li class="sub_menu"><a href="{{ route('operats.artisanals') }}"> Artisanal </a>
                             </li>
-                            <li><a href="#"> Industriel </a>
+                            <li><a href="{{ route('operats.industriel') }}"> Industriel </a>
                             </li>
-                            <li><a href="#"> Service </a>
+                            <li><a href="{{ route('operats.service') }}"> Service </a>
                             </li>
                           </ul>
                         </li>
@@ -109,8 +109,9 @@
                   </li>
                   <li><a><i class="fa fa-file-pdf-o"></i>Arrêtés <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Ministériel</a></li>
-                      <li><a href="#">InterMinistériel</a></li>
+                    <li><a href="{{ route('arretes.index') }}">Tous</a></li>
+                      <li><a href="{{ route('arretes.ministeriels') }}">Ministériel</a></li>
+                      <li><a href="{{ route('arretes.interministeriels') }}">InterMinistériel</a></li>
                     </ul>
                   </li>
                   <li><a href="#"><i class="fa fa-clone"></i> ZEA </a>
@@ -237,7 +238,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-          Plate-forme de Gestion des Opérateurs Miniers Oeuvrant en République Démocratique du Congo <a href="https://colorlib.com"> CTCPM | Ministère des Mines</a>
+          Plate-forme de Gestion des Opérateurs Miniers Oeuvrant en République Démocratique du Congo  <a href="https://colorlib.com"> CTCPM | Ministère des Mines</a> <strong>{{  now() }}</strong>
           </div>
           <div class="clearfix"></div>
         </footer>

@@ -54,11 +54,13 @@
                           <td class="table-buttons">
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
                               <i class="fa fa-eye" ></i>
-                              </a>               
+                              </a> 
+                              @can('create', 'App\Operat')              
                               <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
                               <i class="fa fa-pencil" ></i>
                               </a>
-                            
+                              @endcan
+                              @can('create', 'App\Operat')
                               <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
                               @csrf
                               @method('DELETE')
@@ -66,6 +68,7 @@
                               <i class="fa fa-trash" ></i>
                               </button>
                               </form>
+                              @endcan
                           </td>
                         </tr>
                     @endforeach

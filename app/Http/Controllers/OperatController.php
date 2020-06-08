@@ -37,14 +37,14 @@ class OperatController extends Controller
     // function pour le secteur artisanal
     public function artisana()
     {
-        $operats = Operat::where('secteur_id','2')->get();
+        $operats = Operat::where('secteur_id','1')->get();
         return view('operats.artisanals', compact('operats'));
     }
 
     // function pour le secteur artisanal
     public function industrie()
     {
-        $operats = Operat::where('secteur_id','1')->get();
+        $operats = Operat::where('secteur_id','2')->get();
         return view('operats.industriel', compact('operats'));
     }
 

@@ -31,6 +31,7 @@
                   @endcan
                   
                     <table id="datatable-buttons" class="table table-striped table-bordered mt-3">
+                      
                       <thead>
                         <tr>
                           <th scope="col">NOM</th>
@@ -74,6 +75,17 @@
                     @endforeach
                       </tbody>
                     </table>
+                    <div class="x_content">
+                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Export avec <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      </li>
+                    </ul>
+                  </div>
                   </div>
                 </div>     
 @endsection
