@@ -1,5 +1,4 @@
 <?php
-namespace App\Http\Controllers;
 
 use App\Http\Controllers\OperatController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +24,8 @@ Route::resource('posts', 'PostController');
 Route::resource('operats', 'OperatController');
 //route pour le crud arretes
 Route::resource('arretes', 'ArreteController');
+//route pour le crud contrats
+Route::resource('contrats', 'ContratController');
 //route pour le secteur artisanal
 Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
 //route pour le secteur industriel
@@ -38,7 +39,7 @@ Route::get('/ministeriels', 'ArreteController@minister')->name('arretes.minister
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home');
 // route pour generer un fichier pdf
 Route::get('/getPDF', 'PDFController@getPDF');
 // route pour generer un fichier excel

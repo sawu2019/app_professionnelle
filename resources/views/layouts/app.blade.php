@@ -103,7 +103,7 @@
                   </li>
                   <li><a href="#"><i class="fa fa-file-pdf-o"></i> Contrats Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                        <li><a href="#"> Tous </a></li>
+                        <li><a href="{{ route('contrats.index') }}"> Tous </a></li>
                         <li><a href="#"> Contrats Miniers </a>
                         </li>
                         <li><a href="#"> Conventions Miniers </a>
