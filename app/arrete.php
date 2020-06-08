@@ -12,4 +12,9 @@ class arrete extends Model
     {
         return $this->belongsTo('App\Typearrete');
     }
+    public function operats()
+    {
+        return $this->belongsTo('App\arrete');
+    }
+    
 }

@@ -1,7 +1,9 @@
 <?php
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\OperatController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +38,8 @@ Route::get('/ministeriels', 'ArreteController@minister')->name('arretes.minister
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 // route pour generer un fichier pdf
 Route::get('/getPDF', 'PDFController@getPDF');
 // route pour generer un fichier excel
-Route::get('/showdata', 'CvsController@showdata');
 Route::get('/export', 'CvsController@export');

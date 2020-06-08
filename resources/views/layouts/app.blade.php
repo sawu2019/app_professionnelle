@@ -101,9 +101,14 @@
                         </li>
                     </ul>
                   </li>
-                  <li><a href="#"><i class="fa fa-file-text"></i> Contrats Miniers</a>
-                  </li>
-                  <li><a href="#"><i class="fa fa-file-text"></i> Conventions Miniers</a>
+                  <li><a href="#"><i class="fa fa-file-pdf-o"></i> Contrats Miniers <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                        <li><a href="#"> Tous </a></li>
+                        <li><a href="#"> Contrats Miniers </a>
+                        </li>
+                        <li><a href="#"> Conventions Miniers </a>
+                        </li>
+                    </ul>
                   </li>
                   <li><a href="#"><i class="fa fa-file-text"></i> Titres Miniers </a>
                   </li>
@@ -175,7 +180,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('se déconnecter') }}
+                                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -26,7 +26,7 @@
                   <div class="x_content">
                   @can('create', 'App\Operat')
                   <a href="{{ route('operats.create') }}" class="btn btn-success">
-                  Créer
+                  <i class="glyphicon glyphicon-floppy-save" ></i> Créer
                   </a>
                   @endcan
                   
@@ -54,11 +54,11 @@
                           <td>{{ $operat->site_web}}</td>
                           <td class="table-buttons">
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
-                              <i class="fa fa-eye" ></i>
+                              <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
                               @can('create', 'App\Operat')              
                               <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
-                              <i class="fa fa-pencil" ></i>
+                              <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
                               @can('create', 'App\Operat')
@@ -66,7 +66,7 @@
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">
-                              <i class="fa fa-trash" ></i>
+                              <i class="glyphicon glyphicon-trash" ></i>
                               </button>
                               </form>
                               @endcan
@@ -76,7 +76,7 @@
                       </tbody>
                     </table>
                     <div class="x_content">
-                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Export avec <span class="caret"></span>
+                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
                     </button>
                     <ul role="menu" class="dropdown-menu">
                       <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>

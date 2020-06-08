@@ -16,6 +16,7 @@ class CreateArretesTable extends Migration
         Schema::create('arretes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('typearrete_id');
+            $table->unsignedInteger('operat_id');
             $table->string('titre');
             $table->string('annees');
             $table->string('fichier');

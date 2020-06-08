@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\arrete;
 use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;

@@ -46,6 +46,24 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="opeateur">Concerné <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control has-feedback-left @error('operat_id') is-invalid @enderror"  name="operat_id">
+                            @foreach( $operats as $operat )
+                            <option value="{{ $operat->id }}" >{{ $operat->sigle }}</option>
+                            @endforeach
+                          </select>
+                          @error('operat_id')
+                          <div class="invalid-feedback">
+                            {{ $errors->first('operat_id') }}
+                          </div>
+                          @enderror
+                          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Type d'Arrêtés">Type d'Arrêtés <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">

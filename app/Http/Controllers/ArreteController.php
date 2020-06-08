@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Arrete;
+use App\Operat;
 use App\Typearrete;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -56,7 +57,8 @@ class ArreteController extends Controller
     {
         $this->authorize('create', Arrete::class);
         $typearretes = Typearrete::all();
-        return view('arretes.create', compact('arretes', 'typearretes'));
+        $operats = Operat::all();
+        return view('arretes.create', compact('arretes', 'typearretes', 'operats'));
     }
 
     /**
@@ -75,6 +77,7 @@ class ArreteController extends Controller
         $arrete = new Arrete([
             'titre' => $request->get('titre'),
             'typearrete_id' => $request->get('typearrete_id'),
+            'operat_id' => $request->get('operat_id'),
             'annees' => $request->get('annees'),
             'fichier' => $fichierPath
 

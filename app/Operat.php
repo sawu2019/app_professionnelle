@@ -17,4 +17,9 @@ class Operat extends Model
     {
         return $this->belongsTo('App\Secteur');
     }
+    public function arretes()
+    {
+        return $this->hasMany('App\Operat');
+    }
 }
+
