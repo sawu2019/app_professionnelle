@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Operat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +27,10 @@ class HomeController extends Controller
     {
         $data = DB::table('operats','arretes')->get();
         $dat = DB::table('arretes')->get();
-        return view('home',compact('data','dat'));
+        $bee = Operat::where('filiere_id','1')->get();
+        //$cpmn = DB::table('operats')->select(DB::raw('filiere_id as filiere_id')-> where('filiere_id','1')->get();
+        $cpmn = Operat::where('filiere_id','2')->get();
+        $cppc = Operat::where('filiere_id','3')->get();
+        return view('home',compact('data','dat','bee','cpmn','cppc'));
     }
 }

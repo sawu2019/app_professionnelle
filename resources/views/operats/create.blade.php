@@ -103,6 +103,23 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Filiere">Filière <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control has-feedback-left @error('filiere_id') is-invalid @enderror"  name="filiere_id">
+                            @foreach( $filieres as $filiere )
+                            <option value="{{ $filiere->id }}" >{{ $filiere->nom }}</option>
+                            @endforeach
+                          </select>
+                          @error('filiere_id')
+                          <div class="invalid-feedback">
+                            {{ $errors->first('filiere_id') }}
+                          </div>
+                          @enderror
+                          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nature">Nature <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoriescontrat;
 use App\Contrat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -31,6 +32,20 @@ class ContratController extends Controller
         $contrats = Contrat::all();
         return view('contrats.index', compact('contrats'));
     }
+    // function pour les contrats miniers
+    public function contr()
+    {
+        $contrats = Contrat::where('categoriescontrat_id','1')->get();
+        return view('contrats.contratsminiers', compact('contrats'));
+    }
+
+    // function pour les conventions miniers
+    public function convent()
+    {
+        $contrats = contrat::where('categoriescontrat_id','2')->get();
+        return view('contrats.conventionsminiers', compact('contrats'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +55,8 @@ class ContratController extends Controller
     public function create()
     {
         $this->authorize('create',Contrat::class);
-        return view('contrats.create');
+        $categoriescontrats = Categoriescontrat::all();
+        return view('contrats.create',compact('contrats', 'categoriescontrats'));
     }
 
     /**
@@ -64,7 +80,8 @@ class ContratController extends Controller
             'commodite' => $request->get('commodite'),
             'fichier' => $fichierPath,
             'date_signe' => $request->get('date_signe'),
-            'statut' => $request->get('statut')
+            'statut' => $request->get('statut'),
+            'categoriescontrat_id' => $request->get('categoriescontrat_id')
 
         ]);
         $contrat->save();

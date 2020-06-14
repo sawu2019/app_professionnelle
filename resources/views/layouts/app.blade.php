@@ -64,6 +64,36 @@
                   <li><a><i class="fa fa-home"></i> Opérateurs Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                         <li><a href="{{ route('operats.index') }}">Tous</a>
+                        <li><a> Filières <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="{{ route('operats.Bureaux_Etudes_Environnemental') }}"> Bureaux d'Etudes Environnemental </a>
+                            </li>
+                            <li><a href="#"> Comptoirs </a>
+                            </li>
+                            <li><a href="{{ route('operats.Cooperatives_Minieres') }}"> Coopératives Minières </a>
+                            </li>
+                            <li><a href="{{ route('operats.Cooperatives_Produits_Carrieres') }}"> Cooperatives des Produits des Carrières </a>
+                            </li>
+                            <li><a href="#"> Detenteurs des Produits Explosifs </a>
+                            </li>
+                            <li><a href="#"> Environnemental </a>
+                            </li>
+                            <li><a href="#"> Entités de Traitement  </a>
+                            </li>
+                            <li><a href="#"> Laboratoires </a>
+                            </li>
+                            <li><a href="#"> Mandataires </a>
+                            </li>
+                            <li><a href="#"> Produits Explosifs </a>
+                            </li>
+                            <li><a href="#"> Titulaires des Droits Miniers </a>
+                            </li>
+                            <li><a href="#"> Titulaires des Produits des Carrières </a>
+                            </li>
+                            <li><a href="#"> Sous Traitants </a>
+                            </li>
+                          </ul>
+                        </li>
                         <li><a> Secteurs <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
                             <li class="sub_menu"><a href="{{ route('operats.artisanals') }}"> Artisanal </a>
@@ -104,9 +134,9 @@
                   <li><a href="#"><i class="fa fa-file-pdf-o"></i> Contrats Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                         <li><a href="{{ route('contrats.index') }}"> Tous </a></li>
-                        <li><a href="#"> Contrats Miniers </a>
+                        <li><a href="{{ route('contrats.contratsminiers') }}"> Contrats Miniers </a>
                         </li>
-                        <li><a href="#"> Conventions Miniers </a>
+                        <li><a href="{{ route('contrats.conventionsminiers') }}"> Conventions Miniers </a>
                         </li>
                     </ul>
                   </li>

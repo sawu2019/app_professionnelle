@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\arrete;
+use App\Filiere;
 use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;
@@ -56,6 +57,27 @@ class OperatController extends Controller
          return view('operats.service', compact('operats'));
      }
 
+     // function pour les Bureaux d'Etudes Environnemental
+     public function bee()
+     {
+         $operats = Operat::where('filiere_id','1')->get();
+         return view('operats.Bureaux_Etudes_Environnemental', compact('operats'));
+     }
+
+     // function pour les cooperatives minieres
+     public function cpmn()
+     {
+         $operats = Operat::where('filiere_id','2')->get();
+         return view('operats.Cooperatives_Minieres', compact('operats'));
+     }
+
+     // function pour les cooperatives produits carrieres
+     public function cppc()
+     {
+         $operats = Operat::where('filiere_id','3')->get();
+         return view('operats.Cooperatives_Produits_Carrieres', compact('operats'));
+     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -67,7 +89,8 @@ class OperatController extends Controller
         $this->authorize('create',Operat::class);
         $provinces = Province::all();
         $secteurs = Secteur::all();
-        return view('operats.create', compact('operats', 'provinces','secteurs'));
+        $filieres = Filiere::all();
+        return view('operats.create', compact('operats', 'provinces','secteurs','filieres'));
     }
 
     /**
@@ -111,7 +134,8 @@ class OperatController extends Controller
             'site_web' => $request->get('site_web'),
             'statut' => $request->get('statut'),
             'province_id' => $request->get('province_id'),
-            'secteur_id' => $request->get('secteur_id')
+            'secteur_id' => $request->get('secteur_id'),
+            'filiere_id' => $request->get('filiere_id')
             
         ]);
         $operat->save();

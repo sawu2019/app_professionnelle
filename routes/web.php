@@ -36,6 +36,16 @@ Route::get('/service', 'OperatController@servi')->name('operats.service');
 Route::get('/interministeriels', 'ArreteController@interminister')->name('arretes.interministeriels');
 //route pour l'arrete ministeriels
 Route::get('/ministeriels', 'ArreteController@minister')->name('arretes.ministeriels');
+//route pour les contrats miniers
+Route::get('/contratsminiers', 'ContratController@contr')->name('contrats.contratsminiers');
+//route pour les conventions miniers
+Route::get('/conventionsminiers', 'ContratController@convent')->name('contrats.conventionsminiers');
+//route pour les Bureaux d'Etudes Environnemental
+Route::get('/Bureaux_Etudes_Environnemental','OperatController@bee')->name('operats.Bureaux_Etudes_Environnemental');
+//route pour les cooperatives minieres
+Route::get('/Cooperatives_Minieres','OperatController@cpmn')->name('operats.Cooperatives_Minieres');
+//route pour les cooperatives produits carrieres 
+Route::get('/Cooperatives_Produits_Carrieres','OperatController@cppc')->name('operats.Cooperatives_Produits_Carrieres');
 
 Auth::routes();
 

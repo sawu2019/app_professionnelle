@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContratsTable extends Migration
+class CreateFilieresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateContratsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contrats', function (Blueprint $table) {
+        Schema::create('filieres', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('categoriescontrat_id');
             $table->string('nom');
-            $table->string('dure');
-            $table->string('commodite');
-            $table->string('fichier');
-            $table->string('date_signe');
-            $table->string('statut');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateContratsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contrats');
+        Schema::dropIfExists('filieres');
     }
 }

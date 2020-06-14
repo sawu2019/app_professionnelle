@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Contrat extends Model
 {
     protected $guarded = [];
+
+    public function categoriescontrat()
+    {
+        return $this->belongsTo('App\Categoriescontrat');
+    }
 }

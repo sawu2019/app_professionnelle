@@ -24,12 +24,15 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Contrat')
-                  <a href="{{ route('contrats.create') }}" class="btn btn-success">
-                  <i class="glyphicon glyphicon-floppy-save" ></i> Créer
-                  </a>
-                  @endcan
-                  
+                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      </li>
+                    </ul>
                     <table id="datatable-buttons" class="table table-striped table-bordered mt-3">
                       
                       <thead>
@@ -73,17 +76,6 @@
                     @endforeach
                       </tbody>
                     </table>
-                    <div class="x_content">
-                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu">
-                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
-                      </li>
-                    </ul>
-                  </div>
                   </div>
                 </div>     
 @endsection

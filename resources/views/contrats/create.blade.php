@@ -62,6 +62,23 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Type Contrat">Type Contrat <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control has-feedback-left @error('categoriescontrat_id') is-invalid @enderror"  name="categoriescontrat_id">
+                            @foreach( $categoriescontrats as $categoriescontrat )
+                            <option value="{{ $categoriescontrat->id }}" >{{ $categoriescontrat->nom }}</option>
+                            @endforeach
+                          </select>
+                          @error('categoriescontrat_id')
+                          <div class="invalid-feedback">
+                            {{ $errors->first('categoriescontrat_id') }}
+                          </div>
+                          @enderror
+                          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fichier">Document <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
