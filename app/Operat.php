@@ -17,10 +17,17 @@ class Operat extends Model
     {
         return $this->belongsTo('App\Secteur');
     }
+
     public function filiere()
     {
         return $this->belongsTo('App\Filiere');
     }
+
+    public function fjuridique()
+    {
+        return $this->belongsTo('App\Fjuridique');
+    }
+
     public function arretes()
     {
         return $this->hasMany('App\Operat');

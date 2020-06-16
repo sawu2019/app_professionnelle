@@ -37,23 +37,25 @@
                       <thead>
                         <tr>
                           <th scope="col">NOM</th>
-                          <th scope="col">ADRESSE</th>
-                          <th scope="col">NATURE</th>
                           <th scope="col">DATE DE CREATION</th>
-                          <th scope="col">SITE WEB</th>
-                          <th></th>
+                          <th scope="col">STATUT</th>
+                          <th scope="col">SECTEUR</th>
+                          <th scope="col">CATEGORIE</th>
+                          <th scope="col">DETAILS</th>
                         </tr>
                       </thead>
                       <tbody>
                     @foreach($operats as $operat)
                         <tr>
                           <td>{{ $operat->sigle}}</td>
-                          <td>{{ $operat->adresse}}</td>
-                          <td>{{ $operat->nature}}</td>
+                          <td>{{ $operat->annee_creation}}</td>
+                          <td>{{ $operat->statut}}</td>
                           @if($operat->secteur)
                           <td>{{ $operat->secteur->nom}}</td>
                           @endif
-                          <td>{{ $operat->site_web}}</td>
+                          @if($operat->filiere)
+                          <td>{{ $operat->filiere->nom}}</td>
+                          @endif
                           <td class="table-buttons">
                               <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>

@@ -18,6 +18,7 @@ class CreateOperatsTable extends Migration
             $table->unsignedInteger('province_id');
             $table->unsignedInteger('secteur_id');
             $table->unsignedInteger('filiere_id');
+            $table->unsignedInteger('fjuridique_id');
             $table->string('denomination');
             $table->string('sigle');
             $table->string('description');

@@ -103,7 +103,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Filiere">Filière <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Catégories">Catégories <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control has-feedback-left @error('filiere_id') is-invalid @enderror"  name="filiere_id">
@@ -125,6 +125,23 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="nature" name="nature" required="required" class="form-control has-feedback-left">
                           <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Forme_Juridique">Forme Juridique <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control has-feedback-left @error('fjuridique_id') is-invalid @enderror"  name="fjuridique_id">
+                            @foreach( $fjuridiques as $fjuridique )
+                            <option value="{{ $fjuridique->id }}" >{{ $fjuridique->nom }}</option>
+                            @endforeach
+                          </select>
+                          @error('fjuridique_id')
+                          <div class="invalid-feedback">
+                            {{ $errors->first('fjuridique_id') }}
+                          </div>
+                          @enderror
+                          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
                       <div class="form-group">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\arrete;
 use App\Filiere;
+use App\Fjuridique;
 use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;
@@ -64,21 +65,117 @@ class OperatController extends Controller
          return view('operats.Bureaux_Etudes_Environnemental', compact('operats'));
      }
 
+     // function pour les comptoires
+     public function cmp()
+     {
+         $operats = Operat::where('filiere_id','2')->get();
+         return view('operats.Comptoirs', compact('operats'));
+     }
+
      // function pour les cooperatives minieres
      public function cpmn()
      {
-         $operats = Operat::where('filiere_id','2')->get();
+         $operats = Operat::where('filiere_id','3')->get();
          return view('operats.Cooperatives_Minieres', compact('operats'));
      }
 
      // function pour les cooperatives produits carrieres
      public function cppc()
      {
-         $operats = Operat::where('filiere_id','3')->get();
+         $operats = Operat::where('filiere_id','4')->get();
          return view('operats.Cooperatives_Produits_Carrieres', compact('operats'));
      }
 
+      // function pour les detenteurs des produits explosifs
+      public function detpre()
+      {
+          $operats = Operat::where('filiere_id','5')->get();
+          return view('operats.Detenteurs_Produits_Explosifs', compact('operats'));
+      }
 
+      // function pour les entités des traitement
+      public function ent()
+      {
+          $operats = Operat::where('filiere_id','6')->get();
+          return view('operats.Entites_traitements', compact('operats'));
+      }
+
+      // function pour les laboratoires
+      public function lb()
+      {
+          $operats = Operat::where('filiere_id','7')->get();
+          return view('operats.Laboratoires', compact('operats'));
+      }
+
+      // function pour les laboratoires
+      public function mdt()
+      {
+          $operats = Operat::where('filiere_id','8')->get();
+          return view('operats.Mandataires', compact('operats'));
+      }
+
+      // function pour les titulaires des droits miniers
+      public function tdm()
+      {
+          $operats = Operat::where('filiere_id','9')->get();
+          return view('operats.Titulaires_droits_miniers', compact('operats'));
+      }
+
+      // function pour les titulaires des droits miniers
+      public function tpc()
+      {
+          $operats = Operat::where('filiere_id','10')->get();
+          return view('operats.Titulaires_Produits_Carrieres', compact('operats'));
+      }
+
+      // function pour les sous traitants
+      public function st()
+      {
+          $operats = Operat::where('filiere_id','11')->get();
+          return view('operats.Sous_Traitants', compact('operats'));
+      }
+
+      // function pour le forme juridique sa
+      public function sa()
+      {
+          $operats = Operat::where('fjuridique_id','1')->get();
+          return view('operats.Societes_Anonyme', compact('operats'));
+      }
+
+      // function pour le forme juridique sarl
+      public function sarl()
+      {
+          $operats = Operat::where('fjuridique_id','2')->get();
+          return view('operats.Societe_Responsabilite_Limitee', compact('operats'));
+      }
+
+      // function pour le forme juridique sarlu
+      public function sarlu()
+      {
+          $operats = Operat::where('fjuridique_id','3')->get();
+          return view('operats.Societe_Responsabilite_Limitée_Unipersonelle', compact('operats'));
+      }
+
+      // function pour le forme juridique scs
+      public function scs()
+      {
+          $operats = Operat::where('fjuridique_id','4')->get();
+          return view('operats.Societe_Commandite_Simple', compact('operats'));
+      }
+
+      // function pour le forme juridique sep
+      public function sep()
+      {
+          $operats = Operat::where('fjuridique_id','5')->get();
+          return view('operats.Societe_Participation', compact('operats'));
+      }
+
+      // function pour le forme juridique sep
+      public function gie()
+      {
+          $operats = Operat::where('fjuridique_id','6')->get();
+          return view('operats.Groupement_Interet_Economique', compact('operats'));
+      }
     /**
      * Show the form for creating a new resource.
      *
@@ -90,7 +187,8 @@ class OperatController extends Controller
         $provinces = Province::all();
         $secteurs = Secteur::all();
         $filieres = Filiere::all();
-        return view('operats.create', compact('operats', 'provinces','secteurs','filieres'));
+        $fjuridiques = Fjuridique::all();
+        return view('operats.create', compact('operats', 'provinces','secteurs','filieres','fjuridiques'));
     }
 
     /**
@@ -135,7 +233,8 @@ class OperatController extends Controller
             'statut' => $request->get('statut'),
             'province_id' => $request->get('province_id'),
             'secteur_id' => $request->get('secteur_id'),
-            'filiere_id' => $request->get('filiere_id')
+            'filiere_id' => $request->get('filiere_id'),
+            'fjuridique_id' => $request->get('fjuridique_id')
             
         ]);
         $operat->save();

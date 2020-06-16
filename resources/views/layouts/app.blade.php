@@ -59,38 +59,50 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a a href="#"><i class="fa fa-dashboard"></i> Accueil </a>
+                  <li><a a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Accueil </a>
                   </li>
                   <li><a><i class="fa fa-home"></i> Opérateurs Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                         <li><a href="{{ route('operats.index') }}">Tous</a>
-                        <li><a> Filières <span class="fa fa-chevron-down"></span></a>
+                        <li><a> Catégories <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
                             <li class="sub_menu"><a href="{{ route('operats.Bureaux_Etudes_Environnemental') }}"> Bureaux d'Etudes Environnemental </a>
                             </li>
-                            <li><a href="#"> Comptoirs </a>
+                            <li><a href="{{ route('operats.Comptoirs') }}"> Comptoirs </a>
                             </li>
                             <li><a href="{{ route('operats.Cooperatives_Minieres') }}"> Coopératives Minières </a>
                             </li>
                             <li><a href="{{ route('operats.Cooperatives_Produits_Carrieres') }}"> Cooperatives des Produits des Carrières </a>
                             </li>
-                            <li><a href="#"> Detenteurs des Produits Explosifs </a>
+                            <li><a href="{{ route('operats.Detenteurs_Produits_Explosifs') }}"> Detenteurs des Produits Explosifs </a>
                             </li>
-                            <li><a href="#"> Environnemental </a>
+                            <li><a href="{{ route('operats.Entites_traitements') }}"> Entités de Traitement  </a>
                             </li>
-                            <li><a href="#"> Entités de Traitement  </a>
+                            <li><a href="{{ route('operats.Laboratoires') }}"> Laboratoires </a>
                             </li>
-                            <li><a href="#"> Laboratoires </a>
+                            <li><a href="{{ route('operats.Mandataires') }}"> Mandataires </a>
                             </li>
-                            <li><a href="#"> Mandataires </a>
+                            <li><a href="{{ route('operats.Titulaires_droits_miniers') }}"> Titulaires des Droits Miniers </a>
                             </li>
-                            <li><a href="#"> Produits Explosifs </a>
+                            <li><a href="{{ route('operats.Titulaires_Produits_Carrieres') }}"> Titulaires des Produits des Carrières </a>
                             </li>
-                            <li><a href="#"> Titulaires des Droits Miniers </a>
+                            <li><a href="{{ route('operats.Sous_Traitants') }}"> Sous Traitants </a>
                             </li>
-                            <li><a href="#"> Titulaires des Produits des Carrières </a>
+                          </ul>
+                        </li>
+                        <li><a> F. Juriques <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="{{ route('operats.Societes_Anonyme') }}"> Société Anonyme (SA) </a>
                             </li>
-                            <li><a href="#"> Sous Traitants </a>
+                            <li><a href="{{ route('operats.Societe_Responsabilite_Limitee') }}"> Société à responsabilité Limitée (SARL) </a>
+                            </li>
+                            <li><a href="{{ route('operats.Societe_Responsabilite_Limitée_Unipersonelle') }}"> Société à responsabilité Limitée Unipersonelle (SARLU) </a>
+                            </li>
+                            <li><a href="{{ route('operats.Societe_Commandite_Simple') }}"> Société en Commandite Simple (SCS) </a>
+                            </li>
+                            <li><a href="{{ route('operats.Societe_Participation') }}"> Société en Participation (SEP) </a>
+                            </li>
+                            <li><a href="{{ route('operats.Groupement_Interet_Economique') }}"> Groupement D'interet Economique (GIE) </a>
                             </li>
                           </ul>
                         </li>

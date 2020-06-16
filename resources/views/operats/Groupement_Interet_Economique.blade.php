@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo</small>
+                    <small>Les opérateurs minier oeuvrant en République Démocratique du Congo au secteur de service</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,14 +24,17 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Operat')
-                  <a href="{{ route('operats.create') }}" class="btn btn-success">
-                  <i class="glyphicon glyphicon-floppy-save" ></i> Créer
-                  </a>
-                  @endcan
+                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      </li>
+                    </ul>
                   
                     <table id="datatable-buttons" class="table table-striped table-bordered mt-3">
-                      
                       <thead>
                         <tr>
                           <th scope="col">NOM</th>
@@ -42,10 +45,10 @@
                           <th scope="col">DETAILS</th>
                         </tr>
                       </thead>
-                      <tbody >
+                      <tbody>
                     @foreach($operats as $operat)
                         <tr>
-                          <td>{{ $operat->sigle}}</td>
+                        <td>{{ $operat->sigle}}</td>
                           <td>{{ $operat->annee_creation}}</td>
                           <td>{{ $operat->statut}}</td>
                           @if($operat->secteur)
@@ -77,17 +80,6 @@
                     @endforeach
                       </tbody>
                     </table>
-                    <div class="x_content">
-                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu">
-                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
-                      </li>
-                    </ul>
-                  </div>
                   </div>
                 </div>     
 @endsection

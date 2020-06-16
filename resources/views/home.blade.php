@@ -6,28 +6,28 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count"> {{ $data->count() }} </div>
+                  <div class="count">{{ $data->count() }}</div>
                   <h3>Opérateurs Miniers</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-user"></i></div>
-                  <div class="count">0</div>
-                  <h3>Titres Miniers</h3>
+                  <div class="count">{{ $tdm->count() }}</div>
+                  <h3>Titulaires Miniers</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-magic"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $tpc->count() }}</div>
                   <h3>Titulaires Carrières</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-file-text"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $ent->count() }}</div>
                   <h3>Entités Traitements</h3>
                 </div>
               </div>
@@ -50,14 +50,14 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $cmp->count() }}</div>
                   <h3>Comptoirs</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $lb->count() }}</div>
                   <h3>Laboratoires</h3>
                 </div>
               </div>
@@ -66,59 +66,31 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-clipboard"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $st->count() }}</div>
                   <h3>Sous Traitants</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count"> {{ $bee->count() }} </div>
+                  <div class="count">{{ $bee->count() }}</div>
                   <h3>Bureaux d'Etudes</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-chain-broken"></i></div>
-                  <div class="count">0</div>
+                  <div class="count">{{ $detpre->count() }}</div>
                   <h3>Produits Explosifs</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count">0</div>
+                  <div class="icon"><i class="fa fa-user"></i></div>
+                  <div class="count">{{ $mdt->count() }}</div>
                   <h3>Mandataires</h3>
                 </div>
-              </div>
-              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count"> {{ $dat->count() }}</div>
-                  <h3>Arrêtés</h3>
-                </div>
-              </div>
-              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count">0</div>
-                  <h3>Mandataires</h3>
-                </div>
-              </div>
-              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count">0</div>
-                  <h3>Mandataires</h3>
-                </div>
-              </div>
-              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count">0</div>
-                  <h3>Mandataires</h3>
-                </div>
-              </div>
+              </div> 
             </div>
             </div>
             </div>
