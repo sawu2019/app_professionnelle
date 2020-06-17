@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Accueil | E-Mines</title>
+    <title>Accueil | e-Mines</title>
 
     <!-- Bootstrap -->
     <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -244,7 +244,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>E - Mines </h3>
+                <h3>e - Mines </h3>
               </div>
 
               <div class="title_right">
@@ -285,7 +285,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-          Plate-forme de Gestion des Opérateurs Miniers Oeuvrant en République Démocratique du Congo  <a href="https://colorlib.com"> CTCPM | Ministère des Mines</a> <strong>{{  now() }}</strong>
+          Plate-forme de Gestion des Opérateurs Miniers Oeuvrant en République Démocratique du Congo  <a href="#"> | Ministère des Mines</a> <strong>{{  now() }}</strong>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -323,6 +323,7 @@
     <script src="{{asset('vendors/pnotify/dist/pnotify.js ')}}"></script>
     <script src="{{asset('vendors/pnotify/dist/pnotify.buttons.js ')}}"></script>
     <script src="{{asset('vendors/pnotify/dist/pnotify.nonblock.js ')}}"></script>
+
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('build/js/custom.min.js')}}"></script>

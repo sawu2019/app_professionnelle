@@ -7,7 +7,7 @@
              
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">14</div>
+                  <div class="count">0</div>
                   <h3>Opérateurs Miniers</h3>
                 </div>
                 
@@ -15,21 +15,21 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-user"></i></div>
-                  <div class="count">439</div>
+                  <div class="count">0</div>
                   <h3>Titres Miniers</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-magic"></i></div>
-                  <div class="count">83</div>
+                  <div class="count">0</div>
                   <h3>Titulaires Carrières</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-file-text"></i></div>
-                  <div class="count">84</div>
+                  <div class="count">0</div>
                   <h3>Entités Traitements</h3>
                 </div>
               </div>
@@ -38,21 +38,21 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-file-text"></i></div>
-                  <div class="count">604</div>
+                  <div class="count">0</div>
                   <h3>Coopératives Minieres</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-file-text"></i></div>
-                  <div class="count">4</div>
+                  <div class="count">0</div>
                   <h3>Coopératives Carrières</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">20</div>
+                  <div class="count">0</div>
                   <h3>Comptoirs</h3>
                 </div>
               </div>
@@ -75,21 +75,21 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-home"></i></div>
-                  <div class="count">14</div>
+                  <div class="count">0</div>
                   <h3>Bureaux d'Etudes</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-chain-broken"></i></div>
-                  <div class="count">6</div>
+                  <div class="count">0</div>
                   <h3>Produits Explosifs</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-users"></i></div>
-                  <div class="count">26</div>
+                  <div class="count">0</div>
                   <h3>Mandataires</h3>
                 </div>
               </div>
