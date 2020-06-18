@@ -12,4 +12,8 @@ class Province extends Model
     {
         return $this->hasMany('App\Operat');
     }
+    public function zeas()
+    {
+        return $this->hasMany('App\Zea');
+    }
 }

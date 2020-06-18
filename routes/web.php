@@ -26,6 +26,8 @@ Route::resource('operats', 'OperatController');
 Route::resource('arretes', 'ArreteController');
 //route pour le crud contrats
 Route::resource('contrats', 'ContratController');
+//route pour le crud zea
+Route::resource('zeas', 'ZeaController');
 //route pour le secteur artisanal
 Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
 //route pour le secteur industriel
@@ -81,7 +83,9 @@ Route::get('/Groupement_Interet_Economique','OperatController@gie')->name('opera
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// route pour generer un fichier pdf
+// route pour generer un fichier pdf pour les opérateurs
 Route::get('/getPDF', 'PDFController@getPDF');
+// route pour generer un fichier pdf pour les zeas
+Route::get('/zeaPDF', 'PDFController@zeaPDF');
 // route pour generer un fichier excel
 Route::get('/export', 'CvsController@export');

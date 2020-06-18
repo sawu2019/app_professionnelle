@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Document sans titre</title>
+<title>La liste des opérateurs miniers</title>
 <style type="text/css">
 <!--
 .Style1 {font-family: Arial, Helvetica, sans-serif}

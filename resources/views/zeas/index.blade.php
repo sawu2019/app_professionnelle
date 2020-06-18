@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                  <h2>Opérateurs <small>La liste des opérateurs minier oeuvrant en République démocratique du Congo</small></h2>
+                    <small>Les Zones d'exploitation artisanal en République démocratique du Congo</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,8 +24,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Operat')
-                  <a href="{{ route('operats.create') }}" class="btn btn-success">
+                  @can('create', 'App\Zea')
+                  <a href="{{ route('zeas.create') }}" class="btn btn-success">
                   <i class="glyphicon glyphicon-floppy-save" ></i> Créer
                   </a>
                   @endcan
@@ -34,37 +34,37 @@
                       
                       <thead>
                         <tr>
-                          <th scope="col">NOM</th>
-                          <th scope="col">DATE DE CREATION</th>
-                          <th scope="col">STATUT</th>
-                          <th scope="col">SECTEUR</th>
-                          <th scope="col">CATEGORIE</th>
+                          <th scope="col">ANNEE</th>
+                          <th scope="col">N. ARRETE</th>
+                          <th scope="col">FILIERES</th>
+                          <th scope="col">PROVINCE</th>
+                          <th scope="col">QUALIFICATION DU SITE</th>
+                          <th scope="col">TRANSFORTION</th>
                           <th scope="col">DETAILS</th>
                         </tr>
                       </thead>
                       <tbody >
-                    @foreach($operats as $operat)
+                    @foreach($zeas as $zea)
                         <tr>
-                          <td>{{ $operat->sigle}}</td>
-                          <td>{{ $operat->annee_creation}}</td>
-                          <td>{{ $operat->statut}}</td>
-                          @if($operat->secteur)
-                          <td>{{ $operat->secteur->nom}}</td>
+                          <td>{{ $zea->annee}}</td>
+                          <td>{{ $zea->narrete}}</td>
+                          <td>{{ $zea->filie}}</td>
+                          @if($zea->province)
+                          <td>{{ $zea->province->nom}}</td>
                           @endif
-                          @if($operat->filiere)
-                          <td>{{ $operat->filiere->nom}}</td>
-                          @endif
+                          <td>{{ $zea->qualification}}</td>
+                          <td>{{ $zea->transformation}}</td>
                           <td class="table-buttons">
-                              <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
+                              <a href="{{ route('zeas.show',$zea )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
-                              @can('create', 'App\Operat')              
-                              <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Zea')              
+                              <a href="{{ route('zeas.edit',$zea->id)}}" class="btn btn-primary"> 
                               <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
-                              @can('create', 'App\Operat')
-                              <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
+                              @can('create', 'App\Zea')
+                              <form  action="{{ route('zeas.destroy', $zea->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">
@@ -84,7 +84,7 @@
                       <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
                       </li>
                       <li class="divider"></li>
-                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      <li><a href="{{URL::to('zeaPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
                       </li>
                     </ul>
                   </div>

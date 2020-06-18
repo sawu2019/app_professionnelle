@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Form Design <small>different form elements</small></h2>
+                    <h2>Arrêtées <small>Ajouts</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -81,7 +81,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Années d'Arrêtés</label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="Années">Années d'Arrêtés</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select id="annees" name="annees"  class="form-control has-feedback-left">
                             <option>Choisir</option>
@@ -93,7 +93,6 @@
                           <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
-                      
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fichier">Document <span class="required">*</span>
                         </label>

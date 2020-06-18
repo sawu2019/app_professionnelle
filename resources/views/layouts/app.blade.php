@@ -161,7 +161,7 @@
                       <li><a href="{{ route('arretes.interministeriels') }}">InterMinistériel</a></li>
                     </ul>
                   </li>
-                  <li><a href="#"><i class="fa fa-clone"></i> ZEA </a>
+                  <li><a href="{{ route('zeas.index') }}"><i class="fa fa-clone"></i> Zone Exploitation Artisanal </a>
                   </li>
                 </ul>
               </div>
@@ -245,8 +245,19 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>e - Mines </h3>
+                <!-- debut langue de recherche -->
+                <div id="google_translate_element"></div>
+                    <script>
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement(
+                                {pageLanguage: 'en'},
+                                'google_translate_element'
+                            );
+                        }
+                    </script>
+                    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
               </div>
-
+              <!-- debut langue de recherche -->
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
