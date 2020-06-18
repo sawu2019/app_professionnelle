@@ -14,7 +14,7 @@ class ZeaController extends Controller
   {
     $zeas = Zea::find(1);
  
-    if (Gate::allows('update-operats', $zeas)) {
+    if (Gate::allows('update-zeas', $zeas)) {
       echo 'Allowed';
     } else {
       echo 'Not Allowed';
@@ -71,7 +71,7 @@ class ZeaController extends Controller
 
         ]);
         $zea->save();
-        return redirect('/zeas')->with('Succes','zea saved !');
+        return redirect('/zeas')->with('Succes','ZEA saved !');
     }
 
     /**

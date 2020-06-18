@@ -28,6 +28,8 @@ Route::resource('arretes', 'ArreteController');
 Route::resource('contrats', 'ContratController');
 //route pour le crud zea
 Route::resource('zeas', 'ZeaController');
+//route pour le crud titresminiers
+Route::resource('titrems', 'TitremController');
 //route pour le secteur artisanal
 Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
 //route pour le secteur industriel

@@ -32,6 +32,9 @@ class Operat extends Model
     {
         return $this->hasMany('App\Operat');
     }
-    
+    public function titrems()
+    {
+        return $this->hasMany('App\Titrem');
+    }
 }
 
