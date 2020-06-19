@@ -246,16 +246,15 @@
               <div class="title_left">
                 <h3>e - Mines </h3>
                 <!-- debut langue de recherche -->
+                <div class="float-right">
                 <div id="google_translate_element"></div>
-                    <script>
+                    <script type="text/javascript">
                         function googleTranslateElementInit() {
-                            new google.translate.TranslateElement(
-                                {pageLanguage: 'en'},
-                                'google_translate_element'
-                            );
-                        }
-                    </script>
-                    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        new google.translate.TranslateElement({pageLanguage: 'fr', includedLanguages: 'ar,en,es,fr,hi,id,it,iw,ja,ml,no,pt,ru,sv,sw,tr,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+                                    }
+                    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>   
+                
+            </div>
               </div>
               <!-- debut langue de recherche -->
               <div class="title_right">

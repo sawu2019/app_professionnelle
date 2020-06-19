@@ -21,7 +21,7 @@
                                   <th>B. POSTAL</th>
                                   <th>FAX</th>
                                   <th>TELETHONE</th>
-                                  <th>ADRESS MAIL</th>
+                                  <th>MAIL</th>
                                   <th>SITE WEB</th>
                                 </tr>
                               </thead>
