@@ -80,9 +80,12 @@ class ZeaController extends Controller
      * @param  \App\Zea  $zea
      * @return \Illuminate\Http\Response
      */
-    public function show(Zea $zea)
+    public function show($id)
     {
-        //
+        $this->authorize('create',Zea::class);
+        $provinces = Province::all();
+        $zea = Zea::find($id);
+        return view('zeas.show', compact('zea','provinces'));
     }
 
     /**
@@ -91,9 +94,12 @@ class ZeaController extends Controller
      * @param  \App\Zea  $zea
      * @return \Illuminate\Http\Response
      */
-    public function edit(Zea $zea)
+    public function edit($id)
     {
-        //
+        $this->authorize('create',Zea::class);
+        $provinces = Province::all();
+        $zea = Zea::find($id);
+        return view('zeas.edit', compact('zea','provinces'));  
     }
 
     /**
@@ -103,9 +109,26 @@ class ZeaController extends Controller
      * @param  \App\Zea  $zea
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Zea $zea)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'filie'=>'required',
+            'narrete'=>'required',
+            'qualification'=>'required',
+            'transformation'=>'required',
+            'annee'=>'required'
+        ]);
+
+        $zea = Zea::find($id);
+        $zea->filie =  $request->get('filie');
+        $zea->narrete = $request->get('narrete');
+        $zea->qualification = $request->get('qualification');
+        $zea->transformation = $request->get('transformation');
+        $zea->annee = $request->get('annee');
+        $zea->province_id = $request->get('province_id');
+        $zea->save();
+
+        return redirect('/zeas')->with('success', 'Zea updated!');
     }
 
     /**
@@ -114,8 +137,11 @@ class ZeaController extends Controller
      * @param  \App\Zea  $zea
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Zea $zea)
+    public function destroy($id)
     {
-        //
+        $this->authorize('delete',$id);
+        $zea = Zea::find($id);
+        $zea->delete();
+        return redirect('/zeas')->with('success', 'Zea deleted!');
     }
 }

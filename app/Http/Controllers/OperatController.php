@@ -188,7 +188,7 @@ class OperatController extends Controller
         $secteurs = Secteur::all();
         $filieres = Filiere::all();
         $fjuridiques = Fjuridique::all();
-        return view('operats.create', compact('operats', 'provinces','secteurs','filieres','fjuridiques'));
+        return view('operats.create', compact('operats','provinces','secteurs','filieres','fjuridiques'));
     }
 
     /**
@@ -250,8 +250,9 @@ class OperatController extends Controller
     public function show($id)
     {
         $this->authorize('create',Operat::class);
+        $provinces = Province::all();
         $operat = Operat::find($id);
-        return view('operats.show', compact('operat'));
+        return view('operats.show', compact('operat','provinces'));
     }
 
     /**
@@ -263,8 +264,12 @@ class OperatController extends Controller
     public function edit($id)
     {
         $this->authorize('create',Operat::class);
+        $provinces = Province::all();
+        $secteurs = Secteur::all();
+        $filieres = Filiere::all();
+        $fjuridiques = Fjuridique::all();
         $operat = Operat::find($id);
-        return view('operats.edit', compact('operat'));
+        return view('operats.edit', compact('operat','provinces','secteurs','filieres','fjuridiques'));
     }
 
     /**

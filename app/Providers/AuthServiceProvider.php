@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Operat;
 use App\Policies\OperatPolicy;
+use App\Zea;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -17,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
         'App\Model' => 'App\Policies\ModelPolicy',
-    Operat::class => OperatPolicy::class
+        Operat::class => OperatPolicy::class
     ];
 
     /**
@@ -28,9 +29,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-     
-    Gate::define('update-operat', function ($user, $operat) {
-    return $user->id == $operat->user_id;
-    });
+
+        Gate::define('update-operat', function ($user, $operat) {
+            return $user->id == $operat->user_id;
+        });
     }
 }

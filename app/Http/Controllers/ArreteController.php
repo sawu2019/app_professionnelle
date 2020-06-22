@@ -15,7 +15,7 @@ class ArreteController extends Controller
   {
     $arretes = Arrete::find(1);
  
-    if (Gate::allows('update-operats', $arretes)) {
+    if (Gate::allows('update-arretes', $arretes)) {
       echo 'Allowed';
     } else {
       echo 'Not Allowed';
@@ -58,7 +58,7 @@ class ArreteController extends Controller
         $this->authorize('create', Arrete::class);
         $typearretes = Typearrete::all();
         $operats = Operat::all();
-        return view('arretes.create', compact('arretes', 'typearretes', 'operats'));
+        return view('arretes.create', compact('arretes','typearretes','operats'));
     }
 
     /**
@@ -108,8 +108,10 @@ class ArreteController extends Controller
     public function edit($id)
     {
         $this->authorize('create',Arrete::class);
+        $operats = Operat::all();
+        $typearretes = Typearrete::all();
         $arrete = Arrete::find($id);
-        return view('arretes.edit', compact('arrete'));
+        return view('arretes.edit', compact('arrete','operats','typearretes'));
     }
 
     /**

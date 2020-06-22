@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les Zones d'exploitation artisanal en République démocratique du Congo</small>
+                    <small>La liste des investisseurs oeuvrant en République démocratique du Congo</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,8 +24,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Zea')
-                  <a href="{{ route('zeas.create') }}" class="btn btn-success">
+                  @can('create', 'App\Investisseur')
+                  <a href="{{ route('investisseurs.create') }}" class="btn btn-success">
                   <i class="glyphicon glyphicon-floppy-save" ></i> Créer
                   </a>
                   @endcan
@@ -34,37 +34,37 @@
                       
                       <thead>
                         <tr>
-                          <th scope="col">ANNEE</th>
-                          <th scope="col">N. ARRETE</th>
-                          <th scope="col">FILIERES</th>
-                          <th scope="col">PROVINCE</th>
-                          <th scope="col">QUALIFICATION DU SITE</th>
-                          <th scope="col">TRANSFORTION</th>
-                          <th scope="col">DETAILS</th>
+                          <th scope="col">NOM</th>
+                          <th scope="col">SIGLE</th>
+                          <th scope="col">T. INVESTISSEUR</th>
+                          <th scope="col">SYMBOLE BOURSIER</th>
+                          <th scope="col">ADRESSE</th>
+                          <th scope="col">TELEPHONE</th>
+                          <th scope="col">MAIL</th>
+                          <th scope="col">ACTIONS</th>
                         </tr>
                       </thead>
                       <tbody >
-                    @foreach($zeas as $zea)
+                    @foreach($investisseurs as $investisseure)
                         <tr>
-                          <td>{{ $zea->annee}}</td>
-                          <td>{{ $zea->narrete}}</td>
-                          <td>{{ $zea->filie}}</td>
-                          @if($zea->province)
-                          <td>{{ $zea->province->nom}}</td>
-                          @endif
-                          <td>{{ $zea->qualification}}</td>
-                          <td>{{ $zea->transformation}}</td>
+                          <td>{{ $investisseure->nom}}</td>
+                          <td>{{ $investisseure->sigle}}</td>
+                          <td>{{ $investisseure->tinvestisseur->nom}}</td>
+                          <td>{{ $investisseure->syboursier}}</td>
+                          <td>{{ $investisseure->siege}}</td>
+                          <td>{{ $investisseure->telephone}}</td>
+                          <td>{{ $investisseure->mail}}</td>
                           <td class="table-buttons">
-                              <a href="{{ route('zeas.show',$zea )}}" class="btn btn-success">
+                              <a href="{{ route('investisseurs.show',$investisseure )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
-                              @can('create', 'App\Zea')              
-                              <a href="{{ route('zeas.edit',$zea->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Investisseur')              
+                              <a href="{{ route('investisseurs.edit',$investisseure->id)}}" class="btn btn-primary"> 
                               <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
-                              @can('create', 'App\Zea')
-                              <form  action="{{ route('zeas.destroy', $zea->id)}}" method="post">
+                              @can('create', 'App\Investisseur')
+                              <form  action="{{ route('investisseurs.destroy', $investisseure->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">

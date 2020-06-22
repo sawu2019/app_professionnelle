@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
+use App\Investisseur;
 use App\User;
-use App\Zea;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ZeaPolicy
+class InvestisseurPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class ZeaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Zea  $zea
+     * @param  \App\Investisseur  $investisseur
      * @return mixed
      */
-    public function view(User $user, Zea $zea)
+    public function view(User $user, Investisseur $investisseur)
     {
         return true;
     }
@@ -48,34 +48,34 @@ class ZeaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Zea  $zea
+     * @param  \App\Investisseur  $investisseur
      * @return mixed
      */
-    public function update(User $user, Zea $zea)
+    public function update(User $user, Investisseur $investisseur)
     {
-        return $user->id === $zea->user_id;
+        return $user->id == $investisseur->user_id;
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Zea  $zea
+     * @param  \App\Investisseur  $investisseur
      * @return mixed
      */
-    public function delete(User $user, Zea $zea)
+    public function delete(User $user, Investisseur $investisseur)
     {
-        return $user->id === $zea->user_id;
+        return $user->id == $investisseur->user_id;
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Zea  $zea
+     * @param  \App\Investisseur  $investisseur
      * @return mixed
      */
-    public function restore(User $user, Zea $zea)
+    public function restore(User $user, Investisseur $investisseur)
     {
         //
     }
@@ -84,10 +84,10 @@ class ZeaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Zea  $zea
+     * @param  \App\Investisseur  $investisseur
      * @return mixed
      */
-    public function forceDelete(User $user, Zea $zea)
+    public function forceDelete(User $user, Investisseur $investisseur)
     {
         //
     }

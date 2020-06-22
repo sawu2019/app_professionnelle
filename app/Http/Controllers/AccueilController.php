@@ -2,29 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Operat;
 use Illuminate\Http\Request;
+use App\Operat;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class AccueilController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
+    public function wel(){
         $data = DB::table('operats','arretes')->get();
         $bee = Operat::where('filiere_id','1')->get();
         $cmp = Operat::where('filiere_id','2')->get();
@@ -40,5 +24,4 @@ class HomeController extends Controller
         $st = Operat::where('filiere_id','11')->get();
         return view('home',compact('data','bee','cmp','cpmn','cppc','detpre','ent','lb','mdt','tdm','tpc','st'));
     }
-
 }

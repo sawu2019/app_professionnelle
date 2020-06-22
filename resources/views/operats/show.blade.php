@@ -14,10 +14,12 @@
                             <table class="table table-bordered">
                               <thead>
                                 <tr>
-                                  <th>DENOMINATION</th>
+                                  <th>NOM</th>
                                   <th>SIGLE</th>
                                   <th>DESCRIPTION</th>
                                   <th>ADRESSE</th>
+                                  <th>PROVINCE</th>
+                                  <th>SECTEUR</th>
                                   <th>B. POSTAL</th>
                                   <th>FAX</th>
                                   <th>TELETHONE</th>
@@ -31,6 +33,12 @@
                                   <td>{{$operat->sigle}}</td>
                                   <td>{{$operat->denomination}}</td>
                                   <td>{{$operat->adresse}}</td>
+                                  @if($operat->province)
+                                  <td>{{ $operat->province->nom}}</td>
+                                  @endif
+                                  @if($operat->secteur)
+                                  <td>{{ $operat->secteur->nom}}</td>
+                                  @endif
                                   <td>{{$operat->boite_postal}}</td>
                                   <td>{{$operat->num_fax}}</td>
                                   <td>{{$operat->num_telephone}}</td>
@@ -52,6 +60,7 @@
                               <thead>
                                 <tr>
                                   <th>NATURE</th>
+                                  <th>FILIERE</th>
                                   <th>R. SOCIALE</th>
                                   <th>R. FISCALE</th>
                                   <th>N. SUCCURSALE</th>
@@ -66,6 +75,9 @@
                               <tbody>
                                 <tr>
                                   <td>{{$operat->nature}}</td>
+                                  @if($operat->filiere)
+                                  <td>{{ $operat->filiere->nom}}</td>
+                                  @endif
                                   <td>{{$operat->raison_sociale}}</td>
                                   <td>{{$operat->regime_fiscal}}</td>
                                   <td>{{$operat->nbre_surccursale}}</td>
@@ -90,8 +102,9 @@
                             <table class="table table-bordered">
                               <thead>
                                 <tr>
-                                  <th>CMP. BN. INTERNE</th>
-                                  <th>CMP. BN. ETRANGER</th>
+                                  <th>CMP. INTERNE</th>
+                                  <th>CMP. ETRANGER</th>
+                                  <th>F. JURIDIQUE</th>
                                   <th>TVA</th>
                                   <th>DGI</th>
                                   <th>DGDA</th>
@@ -107,6 +120,9 @@
                                 <tr>
                                   <td>{{$operat->num_compte_bancaire_interne}}</td>
                                   <td>{{$operat->num_compte_bancaire_etranger}}</td>
+                                  @if($operat->fjuridique)
+                                  <td>{{ $operat->fjuridique->nom}}</td>
+                                  @endif
                                   <td>{{$operat->num_tva}}</td>
                                   <td>{{$operat->num_dgi}}</td>
                                   <td>{{$operat->num_dgda}}</td>

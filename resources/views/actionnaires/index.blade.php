@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les Zones d'exploitation artisanal en République démocratique du Congo</small>
+                    <small>Les actionnaires oeuvrant en République démocratique du Congo</small>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,8 +24,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Zea')
-                  <a href="{{ route('zeas.create') }}" class="btn btn-success">
+                  @can('create', 'App\Actionnair')
+                  <a href="{{ route('actionnaires.create') }}" class="btn btn-success">
                   <i class="glyphicon glyphicon-floppy-save" ></i> Créer
                   </a>
                   @endcan
@@ -34,37 +34,29 @@
                       
                       <thead>
                         <tr>
-                          <th scope="col">ANNEE</th>
-                          <th scope="col">N. ARRETE</th>
-                          <th scope="col">FILIERES</th>
-                          <th scope="col">PROVINCE</th>
-                          <th scope="col">QUALIFICATION DU SITE</th>
-                          <th scope="col">TRANSFORTION</th>
-                          <th scope="col">DETAILS</th>
+                          <th scope="col">NOM</th>
+                          <th scope="col">PRENOM</th>
+                          <th scope="col">PROPRIETAIRE</th>
+                          <th scope="col">ACTIONS</th>
                         </tr>
                       </thead>
                       <tbody >
-                    @foreach($zeas as $zea)
+                    @foreach($actionnaires as $actionnaire)
                         <tr>
-                          <td>{{ $zea->annee}}</td>
-                          <td>{{ $zea->narrete}}</td>
-                          <td>{{ $zea->filie}}</td>
-                          @if($zea->province)
-                          <td>{{ $zea->province->nom}}</td>
-                          @endif
-                          <td>{{ $zea->qualification}}</td>
-                          <td>{{ $zea->transformation}}</td>
+                          <td>{{ $actionnaire->nom}}</td>
+                          <td>{{ $actionnaire->prenom}}</td>
+                          <td>{{ $actionnaire->proprietaire}}</td>
                           <td class="table-buttons">
-                              <a href="{{ route('zeas.show',$zea )}}" class="btn btn-success">
+                              <a href="{{ route('actionnaires.show',$actionnaire )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
-                              @can('create', 'App\Zea')              
-                              <a href="{{ route('zeas.edit',$zea->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Actionnair')              
+                              <a href="{{ route('actionnaires.edit',$actionnaire->id)}}" class="btn btn-primary"> 
                               <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
-                              @can('create', 'App\Zea')
-                              <form  action="{{ route('zeas.destroy', $zea->id)}}" method="post">
+                              @can('create', 'App\Actionnair')
+                              <form  action="{{ route('actionnaires.destroy', $actionnaire->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">

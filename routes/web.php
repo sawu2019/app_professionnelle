@@ -15,9 +15,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//route pour de l'accueil
+Route::get('/', 'AccueilController@wel')->name('welcome');
 
 Route::resource('posts', 'PostController');
 //route pour le crud opérateurs
@@ -30,6 +29,12 @@ Route::resource('contrats', 'ContratController');
 Route::resource('zeas', 'ZeaController');
 //route pour le crud titresminiers
 Route::resource('titrems', 'TitremController');
+//route pour le crud actionnaires
+Route::resource('actionnaires', 'ActionnairController');
+//route pour le crud investisseurs
+Route::resource('investisseurs', 'InvestisseurController');
+
+
 //route pour le secteur artisanal
 Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
 //route pour le secteur industriel
@@ -78,6 +83,12 @@ Route::get('/Societe_Commandite_Simple','OperatController@scs')->name('operats.S
 Route::get('/Societe_Participation','OperatController@sep')->name('operats.Societe_Participation');
 //route pour le forme juridique gie
 Route::get('/Groupement_Interet_Economique','OperatController@gie')->name('operats.Groupement_Interet_Economique');
+//route pour investisseur etranger
+Route::get('/Etranger', 'InvestisseurController@etr')->name('investisseurs.Etranger');
+//route pour investisseur public
+Route::get('/Public', 'InvestisseurController@pub')->name('investisseurs.Public');
+//route pour investisseur privee
+Route::get('/Privee', 'InvestisseurController@pri')->name('investisseurs.Privee');
 
 
 

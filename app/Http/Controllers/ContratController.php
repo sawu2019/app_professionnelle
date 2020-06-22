@@ -105,9 +105,12 @@ class ContratController extends Controller
      * @param  \App\Contrat  $contrat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contrat $contrat)
+    public function edit($id)
     {
-        //
+        $this->authorize('create',Contrat::class);
+        $categoriescontrats = Categoriescontrat::all();
+        $contrat = Contrat::find($id);
+        return view('contrats.edit', compact('contrat','categoriescontrats'));
     }
 
     /**

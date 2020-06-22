@@ -89,9 +89,13 @@ class TitremController extends Controller
      * @param  \App\Titrem  $titrem
      * @return \Illuminate\Http\Response
      */
-    public function show(Titrem $titrem)
+    public function show($id)
     {
-        //
+        $this->authorize('create',Titrem::class);
+        $operats = Operat::all();
+        $provinces = Province::all();
+        $titrem = Titrem::find($id);
+        return view('titrems.show', compact('titrem','operats','provinces'));
     }
 
     /**
@@ -100,9 +104,13 @@ class TitremController extends Controller
      * @param  \App\Titrem  $titrem
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titrem $titrem)
+    public function edit($id)
     {
-        //
+        $this->authorize('create',Titrem::class);
+        $provinces = Province::all();
+        $operats = Operat::all();
+        $titrem = Titrem::find($id);
+        return view('titrems.edit', compact('titrem','operats','provinces'));
     }
 
     /**
@@ -112,9 +120,32 @@ class TitremController extends Controller
      * @param  \App\Titrem  $titrem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titrem $titrem)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'permis' => $request->get('permis'),
+            'titusite' => $request->get('titusite'),
+            'typepermis' => $request->get('typepermis'),
+            'statut' => $request->get('statut'),
+            'carrem' => $request->get('carrem'),
+            'localisation' => $request->get('localisation'),
+            'dateoctroi' => $request->get('dateoctroi'),
+            'dateexp' => $request->get('dateexp')
+        ]);
+            $titrem = Titrem::find($id);
+            $titrem->permis = $request->get('permis');
+            $titrem->titusite = $request->get('titusite');
+            $titrem->typepermis = $request->get('typepermis');
+            $titrem->statut = $request->get('statut');
+            $titrem->carrem = $request->get('carrem');
+            $titrem->localisation = $request->get('localisation');
+            $titrem->dateoctroi = $request->get('dateoctroi');
+            $titrem->dateexp = $request->get('dateexp');
+            $titrem->province_id = $request->get('province_id');
+            $titrem->operat_id = $request->get('operat_id');
+            $titrem->save();
+
+            return redirect('/titrems')->with('message', 'Modification Effectuer avec succès!');
     }
 
     /**
@@ -123,8 +154,12 @@ class TitremController extends Controller
      * @param  \App\Titrem  $titrem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titrem $titrem)
+    public function destroy($id)
     {
-        //
+        $this->authorize('delete',$id);
+        $titrem = Titrem::find($id);
+        $titrem->delete();
+
+        return redirect('/titrems')->with('Reussi', 'Suppression Effectuer!');
     }
 }
