@@ -12,4 +12,8 @@ class Investisseur extends Model
     {
         return $this->belongsTo('App\Tinvestisseur');
     }
+    public function pay()
+    {
+        return $this->belongsTo('App\Pay');
+    }
 }

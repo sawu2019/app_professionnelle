@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actionnair;
+use App\Pay;
 use Illuminate\Http\Request;
 
 class ActionnairController extends Controller
@@ -14,7 +15,7 @@ class ActionnairController extends Controller
      */
     public function index()
     {
-        $actionnaires = Actionnair::all();
+        $actionnaires = Actionnair::with('pay')->get();
         return view('actionnaires.index', compact('actionnaires'));
     }
 
@@ -26,7 +27,9 @@ class ActionnairController extends Controller
     public function create()
     {
         $this->authorize('create', Actionnair::class);
-        return view('actionnaires.create');
+        $actionnaires = Actionnair::all();
+        $pays = Pay::all();
+        return view('actionnaires.create',compact('actionnaires','pays'));
     }
 
     /**
@@ -45,7 +48,8 @@ class ActionnairController extends Controller
         $actionnaire = new Actionnair([
             'nom' => $request->get('nom'),
             'prenom' => $request->get('prenom'),
-            'proprietaire' => $request->get('proprietaire')
+            'proprietaire' => $request->get('proprietaire'),
+            'pay_id' => $request->get('pay_id')
 
         ]);
         $actionnaire->save();
@@ -61,7 +65,8 @@ class ActionnairController extends Controller
     public function show($id)
     {
         $actionnaire = Actionnair::find($id);
-        return view('actionnaires.show', compact('actionnaire'));
+        $pays = Pay::all();
+        return view('actionnaires.show', compact('actionnaire','pays'));
     }
 
     /**
@@ -72,8 +77,10 @@ class ActionnairController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit', Actionnair::class);
         $actionnaire = Actionnair::find($id);
-        return view('actionnaires.edit', compact('actionnaire'));
+        $pays = Pay::all();
+        return view('actionnaires.edit', compact('actionnaire','pays'));
     }
 
     /**
@@ -94,6 +101,7 @@ class ActionnairController extends Controller
         $actionnaire->nom =  $request->get('nom');
         $actionnaire->prenom = $request->get('prenom');
         $actionnaire->proprietaire = $request->get('proprietaire');
+        $actionnaire->pay_id = $request->get('pay_id');
         $actionnaire->save();
 
         return redirect('/actionnaires')->with('Reussi', 'Modification Effectuer!');
@@ -107,7 +115,7 @@ class ActionnairController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize('delete', $id);
+        $this->authorize('delete',$id);
         $actionnaire = Actionnair::find($id);
         $actionnaire->delete();
 

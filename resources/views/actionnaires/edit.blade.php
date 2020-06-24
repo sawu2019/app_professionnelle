@@ -36,7 +36,7 @@
   <div class="x_content">
     <br />
     <form method="POST" action="{{ route('actionnaires.update', $actionnaire->id) }}" method="post" data-parsley-validate class="form-horizontal form-label-left">
-    @method('PATCH')
+      @method('PATCH')
       @csrf
       <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nom">NOM <span class="required">*</span>
@@ -60,6 +60,23 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" id="proprietaire" name="proprietaire" required="required" class="form-control has-feedback-left" value={{ $actionnaire->proprietaire }}>
           <span class="fa fa-toggle-on form-control-feedback left" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pays">PAYS<span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <select class="form-control has-feedback-left @error('pay_id') is-invalid @enderror" name="pay_id">
+            @foreach( $pays as $pay )
+            <option value="{{ $pay->id }}" {{ $actionnaire->pay_id == $pay->id ? 'selected' : '' }}> {{ $pay ->nom }}</option>
+            @endforeach
+          </select>
+          @error('pay_id')
+          <div class="invalid-feedback">
+            {{ $errors->first('pay_id') }}
+          </div>
+          @enderror
+          <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
       <div class="ln_solid"></div>

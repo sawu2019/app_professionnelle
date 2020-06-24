@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Investisseur;
+use App\Pay;
 use App\Tinvestisseur;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,8 @@ class InvestisseurController extends Controller
     {
         $this->authorize('create', Investisseur::class);
         $tinvestisseurs = Tinvestisseur::all();
-        return view('investisseurs.create',compact('investisseurs','tinvestisseurs'));
+        $pays = Pay::all();
+        return view('investisseurs.create',compact('investisseurs','tinvestisseurs','pays'));
     }
 
     /**
@@ -85,7 +87,8 @@ class InvestisseurController extends Controller
             'mail' => $request->get('mail'),
             'sweb' => $request->get('sweb'),
             'proprietaire' => $request->get('proprietaire'),
-            'tinvestisseur_id' => $request->get('tinvestisseur_id')
+            'tinvestisseur_id' => $request->get('tinvestisseur_id'),
+            'pay_id' => $request->get('pay_id')
 
         ]);
         $investisseure->save();
@@ -101,7 +104,8 @@ class InvestisseurController extends Controller
     public function show($id)
     {
         $investisseure = Investisseur::find($id);
-        return view('investisseurs.show', compact('investisseure'));
+        $pays = Pay::all();
+        return view('investisseurs.show', compact('investisseure','pays'));
     }
 
     /**
@@ -113,7 +117,9 @@ class InvestisseurController extends Controller
     public function edit($id)
     {
         $investisseure = Investisseur::find($id);
-        return view('investisseurs.edit', compact('investisseure'));
+        $tinvestisseurs = Tinvestisseur::all();
+        $pays = Pay::all();
+        return view('investisseurs.edit', compact('investisseure','pays','tinvestisseurs'));
     }
 
     /**
@@ -150,6 +156,7 @@ class InvestisseurController extends Controller
         $investisseure->mail = $request->get('mail');
         $investisseure->sweb =  $request->get('sweb');
         $investisseure->proprietaire = $request->get('proprietaire');
+        $investisseure->pay_id = $request->get('pay_id');
         $investisseure->save();
 
         return redirect('/investisseurs')->with('Reussi', 'Modification Effectuer!');

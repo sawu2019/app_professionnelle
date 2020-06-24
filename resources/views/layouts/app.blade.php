@@ -140,10 +140,10 @@
                 </li>
                 <li><a href="#"><i class="fa fa-file-text"></i> Projets Miniers <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="#"> Tous </a></li>
-                    <li><a href="#"> Grande echelles</a>
+                    <li><a href="{{ route('projets.index') }}"> Tous </a></li>
+                    <li><a href="{{ route('projets.Grande_Echelle') }}"> Grande echelles</a>
                     </li>
-                    <li><a href="#"> Petits echelles </a>
+                    <li><a href="{{ route('projets.Petite_Echelle') }}"> Petits echelles </a>
                     </li>
                   </ul>
                 </li>

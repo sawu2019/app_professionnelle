@@ -30,7 +30,7 @@ class ArretePolicy
      */
     public function view(User $user, Arrete $arrete)
     {
-        return true;
+        //return true;
     }
 
     /**
@@ -41,7 +41,10 @@ class ArretePolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+        //return $user->id > 0;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**
@@ -53,7 +56,7 @@ class ArretePolicy
      */
     public function update(User $user, Arrete $arrete)
     {
-        return $user->id == $arrete->user_id;
+        //return $user->id == $arrete->user_id;
     }
 
     /**
@@ -65,7 +68,10 @@ class ArretePolicy
      */
     public function delete(User $user, Arrete $arrete)
     {
-        return $user->id == $arrete->user_id;
+        //return $user->id == $arrete->user_id;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**

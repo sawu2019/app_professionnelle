@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Actionnair;
 use App\Operat;
 use App\Policies\OperatPolicy;
 use App\Zea;
@@ -17,8 +18,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-        'App\Model' => 'App\Policies\ModelPolicy',
-        Operat::class => OperatPolicy::class
+        //'App\Model' => 'App\Policies\ModelPolicy',
+        //Operat::class => OperatPolicy::class
     ];
 
     /**
@@ -30,8 +31,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('update-operat', function ($user, $operat) {
-            return $user->id == $operat->user_id;
-        });
+        //Gate::define('update-operat', function ($user, $operat) {
+         //return $user->id == $operat->user_id;
+        //});
     }
 }

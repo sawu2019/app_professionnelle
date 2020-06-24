@@ -9,23 +9,9 @@ use App\Operat;
 use Illuminate\Http\Request;
 use App\Province;
 use App\Secteur;
-use Illuminate\Support\Facades\Gate;
 
 class OperatController extends Controller
 {
-    /* Make sure you don't user Gate and Policy altogether for the same Model/Resource */
-  public function gate()
-  {
-    $operats = Operat::find(1);
- 
-    if (Gate::allows('update-operats', $operats)) {
-      echo 'Allowed';
-    } else {
-      echo 'Not Allowed';
-    }
-     
-    exit;
-  }
     /**
      * Display a listing of the resource.
      *
@@ -249,7 +235,6 @@ class OperatController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('create',Operat::class);
         $provinces = Province::all();
         $operat = Operat::find($id);
         return view('operats.show', compact('operat','provinces'));
@@ -263,7 +248,7 @@ class OperatController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('create',Operat::class);
+        $this->authorize('edit',$id);
         $provinces = Province::all();
         $secteurs = Secteur::all();
         $filieres = Filiere::all();
@@ -363,7 +348,6 @@ class OperatController extends Controller
         $this->authorize('delete',$id);
         $operat = Operat::find($id);
         $operat->delete();
-
         return redirect('/operats')->with('Reussi', 'Suppression Effectuer!');
     }
 }

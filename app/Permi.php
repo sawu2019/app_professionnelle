@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Actionnair extends Model
+class Permi extends Model
 {
     protected $guarded = [];
     
-    public function pay()
+    public function projet()
     {
-        return $this->belongsTo('App\Pay');
+        return $this->hasMany('App\Projet');
     }
 }

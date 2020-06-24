@@ -4,7 +4,7 @@
 @section('content')
 <div class="x_panel">
   <div class="x_title">
-  <h2>Opérateurs <small>Ajouts</small></h2>
+    <h2>Opérateurs <small>Ajouts</small></h2>
     <ul class="nav navbar-right panel_toolbox">
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
       </li>
@@ -145,35 +145,58 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="raison_sociale">Raison Sociale <span class="required">*</span>
-        </label>
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="raison_sociale">Raison Sociale</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" id="raison_sociale" name="raison_sociale" required="required" class="form-control has-feedback-left">
-          <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+          <select id="raison_sociale" name="raison_sociale" class="form-control has-feedback-left">
+            <option>COOPERATIVE CARRIERE</option>
+            <option>COOPERATIVE MINIERE</option>
+            <option>PERSONNE PHYSIQUE</option>
+            <option>PERSONNE PHYSIQUE CARRIERE</option>
+            <option>SOCIETE CARRIERE</option>
+            <option>SOCIETE MINIERE</option>
+            <option>SOCIETE DE SERVICE</option>
+            <option>SOUS TRAITANT</option>
+          </select>
+          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="regime_fiscal">Regime_Fiscal <span class="required">*</span>
-        </label>
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="regime_fiscal">Regime_Fiscal</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" id="regime_fiscal" name="regime_fiscal" required="required" class="form-control has-feedback-left">
-          <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+          <select id="regime_fiscal" name="regime_fiscal" class="form-control has-feedback-left">
+            <option>DROIT COMMUN</option>
+            <option>PRIVILEGIE</option>
+            <option>SPECIALE</option>
+          </select>
+          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="annee_creation">Annee de Creation <span class="required">*</span>
-        </label>
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="annee_creation">Annee de Creation</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" id="annee_creation" name="annee_creation" required="required" class="form-control has-feedback-left">
-          <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
+          <select id="annee_creation" name="annee_creation" class="form-control has-feedback-left">
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+          </select>
+          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="annee_fermeture">Annee de Fermeture <span class="required">*</span>
-        </label>
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="annee_fermeture">Annee de Fermeture</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" id="annee_fermeture" name="annee_fermeture" required="required" class="form-control has-feedback-left">
-          <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
+          <select id="annee_fermeture" name="annee_fermeture" class="form-control has-feedback-left">
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+          </select>
+          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
       <div class="form-group">
@@ -345,11 +368,18 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="statut">Statut <span class="required">*</span>
-        </label>
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="statut">Statut</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <input type="text" id="statut" name="statut" required="required" class="form-control has-feedback-left">
-          <span class="fa fa-toggle-on form-control-feedback left" aria-hidden="true"></span>
+          <select id="statut" name="statut" class="form-control has-feedback-left">
+            <option>ACTIF</option>
+            <option>EN CESSATION ACTIVITE</option>
+            <option>EN CONSTRUCTION</option>
+            <option>EN DEVELOPPEMENT</option>
+            <option>INACTIF</option>
+            <option>EN PRODUCTION</option>
+            <option>EN RECHERCHE</option>
+          </select>
+          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
         </div>
       </div>
 

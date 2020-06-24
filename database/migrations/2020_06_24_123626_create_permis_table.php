@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActionnairsTable extends Migration
+class CreatePermisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateActionnairsTable extends Migration
      */
     public function up()
     {
-        Schema::create('actionnairs', function (Blueprint $table) {
+        Schema::create('permis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('pay_id');
             $table->string('nom');
-            $table->string('prenom');
-            $table->string('proprietaire');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateActionnairsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actionnairs');
+        Schema::dropIfExists('permis');
     }
 }

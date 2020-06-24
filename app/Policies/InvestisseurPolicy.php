@@ -30,7 +30,7 @@ class InvestisseurPolicy
      */
     public function view(User $user, Investisseur $investisseur)
     {
-        return true;
+        //return true;
     }
 
     /**
@@ -41,7 +41,10 @@ class InvestisseurPolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+        //return $user->id > 0;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**
@@ -53,7 +56,7 @@ class InvestisseurPolicy
      */
     public function update(User $user, Investisseur $investisseur)
     {
-        return $user->id == $investisseur->user_id;
+        //return $user->id == $investisseur->user_id;
     }
 
     /**
@@ -65,7 +68,10 @@ class InvestisseurPolicy
      */
     public function delete(User $user, Investisseur $investisseur)
     {
-        return $user->id == $investisseur->user_id;
+        //return $user->id == $investisseur->user_id;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**

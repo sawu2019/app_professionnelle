@@ -33,7 +33,8 @@ Route::resource('titrems', 'TitremController');
 Route::resource('actionnaires', 'ActionnairController');
 //route pour le crud investisseurs
 Route::resource('investisseurs', 'InvestisseurController');
-
+//route pour le crud projets
+Route::resource('projets', 'ProjetController');
 
 //route pour le secteur artisanal
 Route::get('/artisanals', 'OperatController@artisana')->name('operats.artisanals');
@@ -89,6 +90,10 @@ Route::get('/Etranger', 'InvestisseurController@etr')->name('investisseurs.Etran
 Route::get('/Public', 'InvestisseurController@pub')->name('investisseurs.Public');
 //route pour investisseur privee
 Route::get('/Privee', 'InvestisseurController@pri')->name('investisseurs.Privee');
+//route pour  projet à grande echelle
+Route::get('/Grande_Echelle', 'ProjetController@gech')->name('projets.Grande_Echelle');
+//route pour projet à petite echelle
+Route::get('/Petite_Echelle', 'ProjetController@pech')->name('projets.Petite_Echelle');
 
 
 

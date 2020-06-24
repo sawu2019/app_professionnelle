@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                  <h2>Titre Miniers <small>Les titres miniers des opérateurs miniers oeuvrant en République démocratique du Congo et leur titres miniers</small>
+                  <h2>Projets Miniers <small>Les projets miniers de grande echelle en République démocratique du Congo</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,41 +24,44 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Titrem')
-                  <a href="{{ route('titrems.create') }}" class="btn btn-success">
-                  <i class="glyphicon glyphicon-floppy-save" ></i> Créer
-                  </a>
-                  @endcan
+                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      </li>
+                    </ul>
                   
                     <table id="datatable-buttons" class="table table-striped table-bordered mt-3">
                       
                       <thead>
                         <tr>
-                          <th scope="col">PERMIS</th>
-                          <th scope="col">TITULAIRES DU SITE</th>
-                          <th scope="col">TYPES DE PERMIS</th>
-                          <th scope="col">STATUT</th>
-                          <th scope="col">DETAILS</th>
+                          <th scope="col">NOM PROJET</th>
+                          <th scope="col">TYPE PROJET</th>
+                          <th scope="col">TYPE MINES</th>
+                          <th scope="col">ACTIONS</th>
                         </tr>
                       </thead>
                       <tbody >
-                    @foreach($titrems as $titrem)
+                    @foreach($projets as $projet)
                         <tr>
-                          <td>{{ $titrem->permis}}</td>
-                          <td>{{ $titrem->titusite}}</td>
-                          <td>{{ $titrem->typepermis}}</td>
-                          <td>{{ $titrem->statut}}</td>
+                          <td>{{ $projet->nom}}</td>
+                          <td>{{ $projet->tprojet->nom}}</td>
+                          <td>{{ $projet->tmines}}</td>
+                          
                           <td class="table-buttons">
-                              <a href="{{ route('titrems.show',$titrem )}}" class="btn btn-success">
+                              <a href="{{ route('projets.show',$projet )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
-                              @can('create', 'App\Titrem')              
-                              <a href="{{ route('titrems.edit',$titrem->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Projet')              
+                              <a href="{{ route('projets.edit',$projet->id)}}" class="btn btn-primary"> 
                               <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
-                              @can('create', 'App\Titrem')
-                              <form  action="{{ route('titrems.destroy', $titrem->id)}}" method="post">
+                              @can('create', 'App\Projet')
+                              <form  action="{{ route('projets.destroy', $projet->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">
@@ -71,17 +74,6 @@
                     @endforeach
                       </tbody>
                     </table>
-                    <div class="x_content">
-                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false"> <i class="glyphicon glyphicon-download-alt" ></i>  Exporter en <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu">
-                      <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="{{URL::to('zeaPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
-                      </li>
-                    </ul>
-                  </div>
                   </div>
                 </div>     
 @endsection

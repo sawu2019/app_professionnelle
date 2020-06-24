@@ -30,7 +30,7 @@ class ZeaPolicy
      */
     public function view(User $user, Zea $zea)
     {
-        return true;
+        //return true;
     }
 
     /**
@@ -41,7 +41,10 @@ class ZeaPolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+        //return $user->id > 0;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**
@@ -53,7 +56,7 @@ class ZeaPolicy
      */
     public function update(User $user, Zea $zea)
     {
-        return $user->id === $zea->user_id;
+        //return $user->id === $zea->user_id;
     }
 
     /**
@@ -65,7 +68,10 @@ class ZeaPolicy
      */
     public function delete(User $user, Zea $zea)
     {
-        return $user->id === $zea->user_id;
+        //return $user->id === $zea->user_id;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**

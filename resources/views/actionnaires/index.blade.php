@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <small>Les actionnaires oeuvrant en République démocratique du Congo</small>
+                  <h2>Actionnaires <small>Les actionnaires oeuvrant en République démocratique du Congo</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -37,6 +37,7 @@
                           <th scope="col">NOM</th>
                           <th scope="col">PRENOM</th>
                           <th scope="col">PROPRIETAIRE</th>
+                          <th scope="col">PAYS</th>
                           <th scope="col">ACTIONS</th>
                         </tr>
                       </thead>
@@ -46,6 +47,7 @@
                           <td>{{ $actionnaire->nom}}</td>
                           <td>{{ $actionnaire->prenom}}</td>
                           <td>{{ $actionnaire->proprietaire}}</td>
+                          <td>{{ $actionnaire->pay->nom}}</td>
                           <td class="table-buttons">
                               <a href="{{ route('actionnaires.show',$actionnaire )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>

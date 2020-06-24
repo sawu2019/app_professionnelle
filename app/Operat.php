@@ -30,11 +30,15 @@ class Operat extends Model
 
     public function arretes()
     {
-        return $this->hasMany('App\Operat');
+        return $this->hasMany('App\arrete');
     }
     public function titrems()
     {
         return $this->hasMany('App\Titrem');
+    }
+    public function projets()
+    {
+        return $this->hasMany('App\Projet');
     }
 }
 

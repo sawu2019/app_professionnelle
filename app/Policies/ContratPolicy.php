@@ -30,7 +30,7 @@ class ContratPolicy
      */
     public function view(User $user, Contrat $contrat)
     {
-        return true;
+        //return true;
     }
 
     /**
@@ -41,7 +41,10 @@ class ContratPolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+        //return $user->id > 0;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**
@@ -53,7 +56,7 @@ class ContratPolicy
      */
     public function update(User $user, Contrat $contrat)
     {
-        return $user->id == $contrat->user_id;
+        //return $user->id == $contrat->user_id;
     }
 
     /**
@@ -65,7 +68,10 @@ class ContratPolicy
      */
     public function delete(User $user, Contrat $contrat)
     {
-        return $user->id == $contrat->user_id;
+        //return $user->id == $contrat->user_id;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**

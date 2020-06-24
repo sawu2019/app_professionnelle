@@ -30,7 +30,7 @@ class TitremPolicy
      */
     public function view(User $user, Titrem $titrem)
     {
-        return true;
+        //return true;
     }
 
     /**
@@ -41,7 +41,10 @@ class TitremPolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+        //return $user->id > 0;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**
@@ -53,7 +56,7 @@ class TitremPolicy
      */
     public function update(User $user, Titrem $titrem)
     {
-        return $user->id == $titrem->user_id;
+        //return $user->id == $titrem->user_id;
     }
 
     /**
@@ -65,7 +68,10 @@ class TitremPolicy
      */
     public function delete(User $user, Titrem $titrem)
     {
-        return $user->id == $titrem->user_id;
+        //return $user->id == $titrem->user_id;
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
+        ]);
     }
 
     /**

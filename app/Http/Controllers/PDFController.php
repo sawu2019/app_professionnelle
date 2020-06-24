@@ -9,6 +9,7 @@ use App\Zea;
 
 class PDFController extends Controller
 {
+// function pour genere le pdf des operateurs
     public function getPDF(){
         $operats=Operat::all();
         $pdf=PDF::loadView('pdf.operat', ['operats'=>$operats])->setPaper('a4', 'paysage');

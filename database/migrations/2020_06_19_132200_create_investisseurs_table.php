@@ -16,6 +16,7 @@ class CreateInvestisseursTable extends Migration
         Schema::create('investisseurs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('tinvestisseur_id');
+            $table->unsignedInteger('pay_id');
             $table->string('nom');
             $table->string('sigle');
             $table->string('syboursier');

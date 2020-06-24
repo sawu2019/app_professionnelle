@@ -41,8 +41,8 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->mail, [
-            'admin@admin.fr',
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
         ]);
     }
 
@@ -67,8 +67,8 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        return in_array($user->mail, [
-            'admin@admin.fr',
+        return in_array($user->email,[
+            'sawudimbunda@gmail.com',
         ]);
     }
 

@@ -5,7 +5,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                  <h2>Opérateurs <small>La liste des opérateurs minier oeuvrant en République démocratique du Congo</small></h2>
+                  <h2>Projets Miniers <small>Les projets miniers des opérateurs miniers oeuvrant en République démocratique du Congo</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,8 +24,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  @can('create', 'App\Operat')
-                  <a href="{{ route('operats.create') }}" class="btn btn-success">
+                  @can('create', 'App\Projet')
+                  <a href="{{ route('projets.create') }}" class="btn btn-success">
                   <i class="glyphicon glyphicon-floppy-save" ></i> Créer
                   </a>
                   @endcan
@@ -34,37 +34,30 @@
                       
                       <thead>
                         <tr>
-                          <th scope="col">NOM</th>
-                          <th scope="col">DATE DE CREATION</th>
-                          <th scope="col">STATUT</th>
-                          <th scope="col">SECTEUR</th>
-                          <th scope="col">CATEGORIE</th>
-                          <th scope="col">DETAILS</th>
+                          <th scope="col">NOM PROJET</th>
+                          <th scope="col">TYPE PROJET</th>
+                          <th scope="col">TYPE MINES</th>
+                          <th scope="col">ACTIONS</th>
                         </tr>
                       </thead>
                       <tbody >
-                    @foreach($operats as $operat)
+                    @foreach($projets as $projet)
                         <tr>
-                          <td>{{ $operat->sigle}}</td>
-                          <td>{{ $operat->annee_creation}}</td>
-                          <td>{{ $operat->statut}}</td>
-                          @if($operat->secteur)
-                          <td>{{ $operat->secteur->nom}}</td>
-                          @endif
-                          @if($operat->filiere)
-                          <td>{{ $operat->filiere->nom}}</td>
-                          @endif
+                          <td>{{ $projet->nom}}</td>
+                          <td>{{ $projet->tprojet->nom}}</td>
+                          <td>{{ $projet->tmines}}</td>
+                          
                           <td class="table-buttons">
-                              <a href="{{ route('operats.show',$operat )}}" class="btn btn-success">
+                              <a href="{{ route('projets.show',$projet )}}" class="btn btn-success">
                               <i class="glyphicon glyphicon-eye-open" ></i>
                               </a> 
-                              @can('edit', 'App\Operat')              
-                              <a href="{{ route('operats.edit',$operat->id)}}" class="btn btn-primary"> 
+                              @can('create', 'App\Projet')              
+                              <a href="{{ route('projets.edit',$projet->id)}}" class="btn btn-primary"> 
                               <i class="glyphicon glyphicon-pencil" ></i>
                               </a>
                               @endcan
-                              @can('destroy', 'App\Operat')
-                              <form  action="{{ route('operats.destroy', $operat->id)}}" method="post">
+                              @can('create', 'App\Projet')
+                              <form  action="{{ route('projets.destroy', $projet->id)}}" method="post">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-danger">
@@ -84,7 +77,7 @@
                       <li><a href="{{URL::to('/export')}}"><i class="fa fa-file-excel-o" ></i> Excel </a>
                       </li>
                       <li class="divider"></li>
-                      <li><a href="{{URL::to('getPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
+                      <li><a href="{{URL::to('/zeaPDF')}}"><i class="fa fa-file-pdf-o" ></i> Pdf </a>
                       </li>
                     </ul>
                   </div>
